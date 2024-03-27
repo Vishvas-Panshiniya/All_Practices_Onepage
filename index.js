@@ -10,6 +10,7 @@ const dynamictable = require("./routers/dynamictable");
 const kukucube  = require("./routers/kukucube");
 const tictactoe = require("./routers/tic-tac-toe");
 const sorting = require("./routers/sorting");
+const events = require("./routers/events")
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
@@ -26,6 +27,7 @@ app.use("/login", dynamictable)
 app.use("/login" , kukucube)
 app.use("/login" , tictactoe)
 app.use("/login" , sorting)
+app.use("/login" , events)
 
 app.listen(process.env.port);
 console.log(`Server is listening on port http://localhost:${process.env.port}/`);

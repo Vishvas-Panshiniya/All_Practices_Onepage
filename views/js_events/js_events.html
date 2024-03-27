@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event_Handle_In_JavaScript</title>
+ 
+    <!-- CSS -->
+    <style>
+        table,tr,td{
+            border: 2px solid black;
+            /* width: 100%; */
+        }
+
+        tr:nth-of-type(odd) td:nth-of-type(odd),tr:nth-of-type(even) td:nth-of-type(even){
+            background-color: bisque;
+        }
+
+        tr:nth-of-type(odd) td:nth-of-type(even),tr:nth-of-type(even) td:nth-of-type(odd){
+            background-color: cadetblue;
+        }
+
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        function onclickevent(){
+            alert('Onclick Event');
+        }
+
+        function ondbclickevent(){
+            alert('Double Click Event')
+        }
+
+        function mousedown(){
+            alert('MouseDown Event')
+        }
+
+        function mouseenter(){
+            alert('MouseEnter Event')
+        }
+
+        function mouseleave(){
+            alert('MouseLeave Event')
+        }
+
+        function mousemove(){
+            alert('Mouse Move Event')
+        }
+
+        function mouseout(){
+            alert('Mouse Out Event')
+        }
+
+        function mouseover(){
+            alert('Mouse Over Event')
+        }
+
+        function mouseup(){
+            alert('Mouse Up Event')
+        }
+
+        function contextmenu(){
+            alert('ContextMenu Event')
+        }
+
+        function keydown(){
+            alert('Key Down Event')
+        }
+
+        function keypress(){
+            alert('Key Press Event')
+        }
+
+        function keyup(){
+            alert('Key Up Event')
+        }
+
+        function submit1(){
+            alert('Submit Event')
+        }
+
+        function blurevent1(){
+            let x = document.getElementById("name");
+            x.value = x.value.toUpperCase();
+        }
+
+        function focusevent1(x){
+            x.style.background = "red";
+        }
+
+        function focusin1(x){
+            x.style.background= "coral";
+        }
+
+        function focusout1(){
+            let x = document.getElementById('lname');
+            x.value = x.value.toUpperCase();
+            x.style.background = "lightblue";
+        }
+
+        function unloadevent1(){
+            alert('onunload event');
+        }
+
+        function load1(){
+            alert('Page load event');
+        }
+
+        function unload1(){
+            confirm('Are sure close window');
+            if(confirm == true){  
+               window.close();
+            }else{
+                window.location.reload();
+            }
+        }
+
+        function unloadevent1(){
+            window.resizeBy(1367,720);
+        }
+
+        function error1(){
+            alert('This image error event');
+        }
+
+        function scroll1(){
+            alert('On scroll event');
+        }
+
+        function changefunction(){
+            let y = document.getElementById("state").value;
+            alert('You selected state is:' + y);
+        }
+
+        function onfunction(){
+            document.getElementById("demo").innerHTML = "Your Browser Online";
+        }
+
+        function offfunction(){
+            document.getElementById("demo").innerHTML = "Your Browser Offline"
+        }
+    </script>
+</head>
+<body onclick="load1()"  ononline="onfunction()" onoffline="offfunction()" onresize="alert('Resize event');" onbeforeunload="unload1()">
+    <h2 style="text-align: center;">JavaScript Events</h2>
+   <table>
+        <!-- <caption>Mouse Events</caption> -->
+        <tr>
+            <td>
+                <!-- <input type="submit" onclick="onclickevent" value="onclick"> -->
+                <p onclick="onclickevent()">onclick</p>
+            </td>
+            <td>
+                <!-- <input type="submit" ondblclick="ondbclickevent()" value="ondouble click"> -->
+                <p onclick="ondbclickevent()">ondblclick</p>
+            </td>
+            <td>
+                <!-- <input type="submit" onmousedown="mousedown()" value="onmousedown"> -->
+                <p onmousedown="mousedown()">onmousedown</p>
+            </td>
+            <td>
+                <!-- <input type="submit" onmouseenter="mouseenter()" value="onmouseenter"> -->
+                <p onmouseenter="mouseenter()">onmouseenter</p>
+            </td>
+            <td>
+                <!-- <input type="submit" onmouseleave="mouseleave()" value="onmouseleave"> -->
+                <p onmouseleave="mouseleave()">onmouseleave</p>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <!-- <input type="submit" onmousemove="mousemove()" value="onmousemove"> -->
+                <p onmousemove="mousemove()">onmousemove</p>
+            </td>
+            <td>
+                <!-- <input type="submit" onmouseout="mouseout()" value="onmouseout"> -->
+                <p onmouseout="mouseout()">onmouseout</p>
+            </td>
+            <td>
+                <!-- <input type="submit" onmouseover="mouseover()" value="onmouseover"> -->
+                <p onmouseover="mouseover()">onmouseover</p>
+            </td>
+            <td>
+                <!-- <input type="submit" onmouseup="mouseup()" value="onmouseup"> -->
+                <p onmouseup="mouseup()">onmouseup</p>
+            </td>
+            <td>
+                <!-- <input type="submit" oncontextmenu="contextmenu()" value="oncontextmenu"> -->
+                <p oncontextmenu="contextmenu()">oncontextmenu</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" onkeydown="keydown()" value="onkeydown">
+                <!-- <p onkeydown="keydown()">onkeydown</p> -->
+            </td>
+            <td>
+                <input type="submit" onkeypress="keypress()" value="onkeypress">
+                <!-- <p onkeydown="keypress()">onkeypress</p> -->
+            </td>
+            <td>
+                <input type="submit" onkeyup="keyup()" value="onkeyup">
+                <!-- <p onkeyup="keyup()">onkeyup</p> -->
+            </td>
+            <td>
+                <p>OnSubmit</p>
+                <form action="/#" onsubmit="submit1()">
+                    Enter Name:<input type="text" id="fname" name="fname"><br>
+                    <input type="submit" value="submit">
+                </form>
+            </td>
+            <td>
+                <p>OnBlur</p>
+                Enter Name:<input type="text" id="name" onblur="blurevent1()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>OnFocus</p>
+                Enter Name:<input type="text" onfocus="focusevent1(this)">
+            </td>
+            <td>
+                <p>OnFocusIn</p>
+                Enter Name:<input type="text" onfocusin="focusin1(this)">
+            </td>
+            <td>
+                <p>OnFocusOut</p>
+                Enter Name:<input type="text" id="lname" onfocusout="focusout1(this)">
+            </td>
+            <td>
+                <!-- <input type="button" onclick="load1()" value="load"> --> OnLoad
+            </td>
+            <td>
+                <input type="button" onclick="unload1()" value="unload">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                OnResize
+            </td>
+            <td>
+                <p>OnError</p>
+                <!-- <img src="vishvas.jpg" id="onerror" name="onerror" onerror="error1()"> -->
+            </td>
+            <td>
+                <p style="text-align: center;">
+                    OnScroll
+                </p>
+                <p style="overflow: scroll; width: 150px; height: 100px;" onscroll="scroll1()">This is a paragraph.
+                    this simple event is scroll use this paragraph.
+                    this simple event is scroll use this paragraph.
+                    this simple event is scroll use this paragraph.
+                    this simple event is scroll use this paragraph.
+                </p>
+            </td>
+            <td>
+                On Change <br>
+                <select id="state" onchange="changefunction()">
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Bihar">Bihar</option>
+                </select>
+            </td>
+            <td>
+                Online And Offline Event
+                <p id="demo"></p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
