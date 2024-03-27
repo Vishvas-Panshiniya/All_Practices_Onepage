@@ -1,0 +1,103 @@
+body{
+    /* background-color: lightgray; */
+    background-image: url("../img/light-wallpaper-preview.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+h2{
+    text-align: center;
+    color: #043b55;
+}
+
+/* table all css */
+td{
+    padding: 8px;
+}
+
+input{
+    height: 40px;
+    border-radius: 10px;
+    width: 200px;
+    border: 1px solid #4c4c4c;
+    text-align: center;
+    background-color: lightgray;
+}
+
+table{
+    margin: 50px auto;
+    width: 300px;
+    background-color: cadetblue;
+    text-align: center;
+    border-radius: 10%;
+    border: 5px solid white;
+    height: 300px;
+}
+
+/* btn style all submit-btn */
+#submitbtn{
+    background-color: lightblue;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* error show */
+span{
+    color: brown;
+    font-size: 12px;
+}
+
+/* all anchor tag */
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* index page  */
+.maindiv{
+    display: flex;
+    margin-left: 40%;
+}
+
+.namediv{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 30px;
+}
+
+/* sign in btn */
+.signbtn {
+    margin: 20px;
+    background-color: lightblue;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* home page btn */
+.passbtn{
+    background-color: lightseagreen;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    margin-top: 40px;
+    margin-left: 42%;
+    text-align: center;
+}
+
+
+
+/* password page */
+.loginpage{
+    text-align: center;
+}
+
+.loginpage span{
+    color: black;
+}
+
+.loginpage a{
+    color: indianred;
+}

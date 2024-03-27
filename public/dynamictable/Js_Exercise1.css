@@ -1,0 +1,52 @@
+/* body css use this css */
+body{
+    background-image: linear-gradient(to right , #0ba067 ,#d6e22b);
+}
+
+/* table all css this use  */
+td{
+    border: 1px inset black;
+    border-collapse: collapse;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    /* width: 300px;
+    height: 300px; */
+}
+
+/* name, id and button css use this class .btn1  & .btn2*/
+.btn1{
+    display: inline-block;
+
+}
+
+.btn2{
+    float: right;
+}
+
+/* Add rows & Remove rows button use this css */
+.r1{
+    background-color: salmon;
+    border: 2px double black;
+}
+
+/* Add columns & Remove columns button use this css */
+.c1{
+    background-color: aqua;
+    border: 2px double black;
+}
+
+/* diffrent color change in table use this  */
+tr:nth-of-type(odd) td:nth-of-type(odd),tr:nth-of-type(even) td:nth-of-type(even){
+    background-color:  cornflowerblue;
+}
+
+tr:nth-of-type(odd) td:nth-of-type(even),tr:nth-of-type(even) td:nth-of-type(odd){
+    background-color:  lightcoral;
+}

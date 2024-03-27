@@ -1,0 +1,68 @@
+/* Name and Id show in online two class .div1 and .div2 */
+.div1{
+    display: inline-block;
+
+}
+
+.div2{
+    float: right;
+}
+
+/* body color add */
+body{
+    background-image: linear-gradient(to right , #d36912 ,#bdc633);
+}
+
+/* start and pause game button center use this */
+.startbtn{
+    text-align: center;
+}
+
+/* start and pause game button use this class css  */
+.btn1{
+    /* background-color: chocolate; */
+    border: 2px groove black;
+    border-radius: 8px;
+}
+
+/* create restart btn use this id  */
+#rbtn{
+    margin-left: 50%;
+    /* background-color: chocolate; */
+    border:  2px groove black;
+    border-radius: 8px;
+}
+
+/* table all css add below */
+td{
+    border: 1px groove black;
+    border-collapse: collapse;
+    border-radius: 12px;
+    /* background-color: coral; */
+}
+
+table{
+    width: 300px;
+    height: 320px;
+}
+
+
+#table1{
+    margin-top: 40px;
+}
+
+/* .st1 and .st2 use set score and timeleft css use */
+.st1{
+    float: left;
+    /* background-color: black;
+    color: brown; */
+    display: inline-block;
+}
+
+.st2{
+    float: right;
+    /* /* color: brown; */
+    /* background-color: white;  */
+    display: inline-block;
+    
+}

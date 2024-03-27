@@ -1,0 +1,49 @@
+<!-- Register for new user add details  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Form</title>
+    <link rel="stylesheet" href="loginpage/style.css">
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form action="/register" method="post" onsubmit="return validation()" autocomplete="off">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" id="fname" name="fname" placeholder="FirstName" tabindex="0" value="<%= result.fname %>">
+                    <br><span id="s1"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="lname" name="lname" placeholder="LastName" value="<%= result.lname %>">
+                    <br><span id="s2"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="email" name="email" placeholder="Email">
+                    <br><span id="s3"></span>
+                    <span id="emailexit"><%= msg %></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Register" id="submitbtn">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="text-align: center; font-size: 14px;">
+                        Already registered ? Please <a href="/signin"><strong style="color: indianred;">Login</strong></a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script type="text/javascript" src="loginpage/script.js"></script>
+</body>
+</html>

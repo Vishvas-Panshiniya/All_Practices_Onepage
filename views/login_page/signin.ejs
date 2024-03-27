@@ -1,0 +1,55 @@
+<!-- Login page render this page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Page</title>
+    <link rel="stylesheet" href="loginpage/style.css">
+</head>
+<body>
+    <h2>Login Page</h2>
+    <form action="/profile" method="post" id="form" autocomplete="off">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" id="email" name="email" placeholder="Email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="password" name="password" placeholder="Password">
+                    <br><a href="/forgetpassword" style="margin: 20px 0px 0px -80px; font-size: 12px; color: darkred;">Forget Password?</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="Submit" id="submitbtn" onclick="logindata()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span id="s4"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div style="text-align: center; margin-top: -20px;  font-size: 14px;">
+                        Not registered yet? <a href="/signup"><strong style="color: darkred;">Register</strong></a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div style="text-align: center; margin: 10px;">
+        <span id="s5"></span><br><br>
+        <span id="s6"></span>
+    </div>
+    <a href="/">
+        <div class="passbtn">
+            Go Home
+        </div>
+    </a>
+    <script type="text/javascript" src="loginpage/script.js"></script>
+</body>
+</html>

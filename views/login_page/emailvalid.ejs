@@ -1,0 +1,33 @@
+<!-- forget password first valid email check this page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="loginpage/style.css">
+</head>
+<body>
+    <h2>Forget Password</h2>
+    <form action="/forgetpassword" method="post" id="form" autocomplete="off">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" id="email" name="email" placeholder="Email">
+                    <br><span id="s7"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="Submit" id="submitbtn" onclick="forget()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div style="text-align: center;">
+        <span id="s8"></span>
+    </div>
+    <script type="text/javascript" src="loginpage/script.js"></script>
+    
+</body>
+</html>
