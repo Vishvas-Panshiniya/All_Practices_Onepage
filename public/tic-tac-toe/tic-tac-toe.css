@@ -1,0 +1,52 @@
+/* body use css tagname */
+body {
+    background-image: linear-gradient(to right, #86a3e7, #19c3cf);
+    /* color: #f4d4de; */
+    /* text-align: center; */
+}
+
+/* name and id align use this class .text1 and .text2 */
+.text1{
+    display: inline-block;
+
+} 
+
+.text2{
+    float: right;
+} 
+
+/* table all css */
+td{
+    border: 2px double black;
+    border-radius: 12px; 
+    background-color: white;   
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: larger;
+}
+
+table{
+    margin-top: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+/* reset btn css */
+.btn2{
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* heading .name1 */
+.name1{
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Player Enter */
+#playerShow{
+    text-align: center;
+    color: darkcyan;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
