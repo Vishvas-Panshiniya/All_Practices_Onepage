@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js_Exercise4(TextFelid)</title>
+
+    <!-- Css -->
+    <style>
+        div{
+            text-align: center;
+        }
+
+        body{
+            background-image: linear-gradient(to right, #0b879c,#057d8d);
+        }
+
+        .text1{
+            display: inline-block;
+        } 
+
+        .text2{
+            float: right;
+        } 
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Js_Exercises4</h2>
+    <div class="text1">
+        <h2>Name:- Vishvas Panshiniya</h2>
+    </div>
+    <div class="text2">
+        <h2>Emp ID:- 24DEV065</h2>
+    </div>
+    <hr>
+    <div>
+        <h2>Sorting Algorithms</h2>
+        <br>
+        <form>
+        <label for="Enter Value">Enter Value:- </label>
+        <input type="text" id="value1" placeholder="1,2,3,.....">
+        <br><br>
+        <input type="button" onclick="gettext1()" value="BubbleSort">
+        <input type="button" onclick="gettext2()" value="InsertionSort">
+        <p id="demo"></p>
+        <input type="reset" value="Reset" onclick="window.location.reload()">
+    </form>
+    </div>
+    <script>
+        function gettext1(){
+            var getvalue = document.getElementById("value1").value;
+            var arr = getvalue.split(",");
+            var array = []
+            for(let k=0; k<arr.length; k++){
+                array.push(parseInt(arr[k]));
+                bubblesort(array);
+            }
+        }
+
+        function gettext2(){
+            var getvalue = document.getElementById("value1").value;
+            var arr = getvalue.split(",");
+            var array = []
+            for(let k=0; k<arr.length; k++){
+                array.push(parseInt(arr[k]));
+                insertionsort(array);
+            }
+        }
+
+        function bubblesort(arr){
+        // document.write(arr);
+            var i,j,temp1;
+            for(i=0; i< arr.length-1; i++){
+                    // console.log(i);
+                for(j=0; j<arr.length-i-1; j++){
+                    if(arr[j] > arr[j+1]){
+                        temp1 = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp1;
+                    }
+                }
+            }
+            document.getElementById("demo").innerHTML = "Sorted Array:-"+ arr;
+            // console.log(arr);
+        }
+
+        function insertionsort(arr){
+            var m,n,key;
+            for(m=0; m<arr.length; m++){
+                key=arr[m];
+                n = m-1;
+                while(n>=0 && arr[n]>key){
+                    arr[n+1] = arr[n];
+                    n = n-1;
+                }
+                arr[n+1] = key;
+            }
+            document.getElementById("demo").innerHTML = "Sorted Array:-"+ arr;
+        }
+
+    </script>
+</body>
+</html>

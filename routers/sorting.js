@@ -1,8 +1,8 @@
 const express = require("express");
-const { dynamictable } = require('../controllers/dynamictable');
 const { authtoken } = require("../middleware/authentication");
+const { sorting } = require("../controllers/sorting");
 const router = express.Router();
 
-router.route("/dashboard/dynamictable").get(authtoken,dynamictable);
+router.route("/dashboard/sorting").get(authtoken,sorting);
 
 module.exports = router;
