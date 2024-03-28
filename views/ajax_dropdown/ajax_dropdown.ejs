@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/ajax_dropdown/ajax_dropdown.css">
+</head>
+<body onload="loadfuncation()">
+    <div class="mainpage">
+        <h2>Name:- Vishvas Panshiniya</h2>
+        <h2>Employee ID:- 24DEV065</h2>
+    </div>
+
+    <!-- state dropdown -->
+    <label for="statelist">Select State :-</label>
+    <select name="statelist" id="statelist" onchange="statechange(this.value)">
+        <option value="selectstate">Select</option>
+    </select>
+    <br><br>
+    <!-- city dropdown -->
+    <label for="citylist">Statewise Cities :-</label>
+    <select name="citylist" id="city">
+        <option value="selectcity">Select</option>
+    </select>
+
+    <script src="/ajax_dropdown/ajax_dropdown.js"></script>
+</body>
+</html>
