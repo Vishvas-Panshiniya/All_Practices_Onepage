@@ -1,6 +1,6 @@
 const mysql = require("../config/db_connection");
 const insertdata = require("../middleware/queryrun");
-var bodyparser = require("body-parser");
+const bodyparser = require("body-parser");
 
 exports.indexpage = async (req, res) => {
     try {

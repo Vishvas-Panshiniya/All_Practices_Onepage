@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/column_wise_orderby/columnorderby.css">
+</head>
+<body>
+    <div class="page">
+        <% if (l > 1) { %>
+        <a  class="fa-solid fa-angles-left arrow" href="?p=1&sort=<%= sort %>&column=<%= column %>"></a>
+        <a  class="fa-solid fa-angle-left arrow" href="?p=<%= Number(l)-1%>&sort=<%= sort %>&column=<%= column %>"></a>
+        <% } %>
+        <p><%= l %></p>
+        <% if(l >= 1 && l <20) { %>
+        <a  class="fa-solid fa-angle-right arrow" href="?p=<%= Number(l)+1%>&sort=<%= sort %>&column=<%= column %>"></a>
+        <a class="fa-solid fa-angles-right arrow" href="?p=20&sort=<%= sort %>&column=<%= column %>"></a>
+        <% } %>
+</div>
+</body>
+</html>

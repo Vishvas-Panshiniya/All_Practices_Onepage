@@ -1,9 +1,9 @@
 const mysql = require("../config/db_connection");
 var path = require("path");
 const insertdata = require("../middleware/queryrun");
-var md5 = require("md5");
-var jwt = require("jsonwebtoken");
-var moment = require("moment");
+const md5 = require("md5");
+const jwt = require("jsonwebtoken");
+const moment = require("moment");
 
 
 exports.homepage = (req,res) =>{

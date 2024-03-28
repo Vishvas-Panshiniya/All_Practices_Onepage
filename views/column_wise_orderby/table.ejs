@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/column_wise_orderby/columnorderby.css">
+</head>
+<body>
+    <div class="table1">
+        <table>
+            <thead>
+                <th>StudentID <br><a class="fa-solid fa-arrow-up updown" href="?p=1&sort=asc&column=studentid"></a><a class="fa-solid fa-arrow-down updown" href="?p=1&sort=desc&column=studentid"></a></th>
+                <th>FirstName <br><a class="fa-solid fa-arrow-up updown" href="?p=1&sort=asc&column=firstname"></a><a class="fa-solid fa-arrow-down updown" href="?p=1&sort=desc&column=firstname"></a></th>
+                <th>LastName <br><a class="fa-solid fa-arrow-up updown" href="?p=1&sort=asc&column=lastname"></a><a class="fa-solid fa-arrow-down updown" href="?p=1&sort=desc&column=lastname"></a></th>
+                <th>Date Of Birth <br><a class="fa-solid fa-arrow-up updown" href="?p=1&sort=asc&column=dob"></a><a class="fa-solid fa-arrow-down updown" href="?p=1&sort=desc&column=dob"></a></th>
+                <th>Moblie No<br><a class="fa-solid fa-arrow-up updown" href="?p=1&sort=asc&column contact_no"></a><a class="fa-solid fa-arrow-down updown" href="?p=1&sort=desc&column=contact_no"></a></th>
+                <th>Email <br><a class="fa-solid fa-arrow-up updown" href="?p=1&sort=asc&column=email"></a><a class="fa-solid fa-arrow-down updown" href="?p=1&sort=desc&column=email"></a></th>
+                <th>City <br><a class="fa-solid fa-arrow-up updown" href="?p=1&sort=asc&column=city"></a><a class="fa-solid fa-arrow-down updown" href="?p=1&sort=desc&column=city"></a></th>
+                <th>State <br><a class="fa-solid fa-arrow-up updown" href="?p=1&sort=asc&column=state"></a><a class="fa-solid fa-arrow-down updown" href="?p=1&sort=desc&column=state"></a></th>
+                <th>Country <br><a class="fa-solid fa-arrow-up updown" href="?p=1&sort=asc&column=country"></a><a class="fa-solid fa-arrow-down updown" href="?p=1&sort=desc&column=country"></a></th>
+                <th>Zipcode <br><a class="fa-solid fa-arrow-up updown" href="?p=1&sort=asc&column=zipcode"></a><a class="fa-solid fa-arrow-down updown" href="?p=1&sort=desc&column=zipcode"></a></th>
+            </thead>
+            <tbody>
+            <%for(let i = 0 ; i < alldata2.length; i ++ ) { %>
+                <tr class="tbody1">
+                    <td><%= alldata2[i].studentid %></td>
+                    <td><%= alldata2[i].firstname %></td>
+                    <td><%= alldata2[i].lastname %></td>
+                    <td><%= alldata2[i].dob %></td>
+                    <td><%= alldata2[i].contact_no %></td>
+                    <td><%= alldata2[i].email %></td>
+                    <td><%= alldata2[i].city %></td>
+                    <td><%= alldata2[i].state %></td>
+                    <td><%= alldata2[i].country %></td>
+                    <td><%= alldata2[i].zipcode %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <script src="/column_wise_orderby/columnorderby.js"></script>
+</body>
+</html>
