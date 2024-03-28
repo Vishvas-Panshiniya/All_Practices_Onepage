@@ -7,25 +7,24 @@ exports.indexpage = async (req, res) => {
         let a = req.query.p || 1;
         let query = req.query.sql || "default";
         let limit = 10;
-        const err = "this doesn't exits"
+        // const err = "this doesn't exits"
         let offset = (Number(a) - 1) * 10;
         if (query == "default") {
             res.render("dynamic_queryrun/component", { l: 0 });
         }
-        else{
+        else {
             let result = await insertdata(query);
-            if (err || result.length == 0) {
-                  res.render("dynamic_queryrun/error",{query,err})
+            if (result.length == 0 || result.err) {
+                res.render("dynamic_queryrun/error")
             }
-            else{
+            else {
                 let max = result.length;
                 let page = Math.ceil(max / limit);
-            if (err) {
-              // console.log(err);
-              res.render("dynamic_queryrun/error", { query, err});
-            } else {
-              let result2 = result.slice(offset, offset + limit);
-              res.render("dynamic_queryrun/component", { query, result2, l:1, a, page });
+            if(result.err){
+                res.render("dynamic_queryrun/error")
+            }else{
+                let result2 = result.slice(offset, offset + limit);
+                res.render("dynamic_queryrun/component", { query, result2, l: 1, a, page });
             }
             }
         }
