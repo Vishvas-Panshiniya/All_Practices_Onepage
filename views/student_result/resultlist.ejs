@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result-List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/student_result/student_result.css">
+</head>
+<body>
+    <div class="mainpage">
+        <h2>Name:- Vishvas Panshiniya</h2>
+        <h2>Employee ID:- 24DEV065</h2>
+    </div>
+    <div class="page">
+        <% if (l > 1) { %>
+        <a  class="fa-solid fa-angles-left icon" href="resultlist?p=1"></a>
+        <a  class="fa-solid fa-angle-left icon" href="resultlist?p=<%= Number(l)-1%>"></a>
+        <% } %>
+        <p><%= l %></p>
+        <% if(l >= 1 && l <20) { %>
+        <a  class="fa-solid fa-angle-right icon" href="resultlist?p=<%= Number(l)+1%>"></a>
+        <a class="fa-solid fa-angles-right icon" href="resultlist?p=20"></a>
+        <% } %>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th rowspan="2">StudentID</th>
+                <th rowspan="2">Student-FirstName</th>
+                <th rowspan="2">Student-LastName</th>
+                <th colspan="2">Terminal</th>
+                <th colspan="2">Prelim</th>
+                <th colspan="2">Final</th>
+                <th rowspan="2">Total Mark</th>
+                <th rowspan="2">Button</th>
+            </tr>
+            <tr>
+                <th>Practical</th>
+                <th>Theroy</th>
+                <th>Practical</th>
+                <th>Theroy</th>
+                <th>Practical</th>
+                <th>Theroy</th>
+            </tr>
+            
+            <% for(let i = 0; i < result.length; i += 3) { %> 
+                <tr>    
+                    <td><%= result[i].studentid %></td>
+                    <td><%= result[i].firstname %></td>
+                    <td><%= result[i].lastname %></td>
+                <% for(let j = i; j < i + 3; j++) {  %>
+                        <td><%= result[j].totalpramark %></td>
+                        <td><%= result[j].totaltheroymark %></td> 
+                <% } %>
+                <td><%= result[i].totalpramark + result[i].totaltheroymark + result[i+1].totalpramark + result[i+1].totaltheroymark + result[i+2].totalpramark + result[i+2].totaltheroymark %></td>
+                <td><a href="/login/dashboard/resultlist/studentdata?id=<%= result[i].studentid %>" id="result" target="_blank">Result</a></td>
+                </tr>
+            <% } %> 
+        </table>
+    </div>
+</body>
+</html>

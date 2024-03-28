@@ -15,13 +15,13 @@
     <h2>Student_List</h2>
     <div class="page">
         <% if (l > 1) { %>
-        <a  class="fa-solid fa-angles-left" href="/login/dashboard/component?p=1"></a>
-        <a  class="fa-solid fa-angle-left" href="/login/dashboard/component?p=<%= Number(l)-1%>"></a>
+        <a  class="fa-solid fa-angles-left" href="component?p=1"></a>
+        <a  class="fa-solid fa-angle-left" href="component?p=<%= Number(l)-1%>"></a>
         <% } %>
         <p><%= l %></p>
         <% if(l >= 1 && l <250) { %></20>
-        <a  class="fa-solid fa-angle-right" href="/login/dashboard/component?p=<%= Number(l)+1%>"></a>
-        <a class="fa-solid fa-angles-right" href="/login/dashboard/component?p=250"></a>
+        <a  class="fa-solid fa-angle-right" href="component?p=<%= Number(l)+1%>"></a>
+        <a class="fa-solid fa-angles-right" href="component?p=250"></a>
         <% } %>
     </div>
     <div>
