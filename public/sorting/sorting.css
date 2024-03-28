@@ -1,0 +1,15 @@
+div{
+    text-align: center;
+}
+
+body{
+    background-image: linear-gradient(to right, #0b879c,#057d8d);
+}
+
+.text1{
+    display: inline-block;
+} 
+
+.text2{
+    float: right;
+} 

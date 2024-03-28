@@ -1,0 +1,12 @@
+table,tr,td{
+    border: 2px solid black;
+    /* width: 100%; */
+}
+
+tr:nth-of-type(odd) td:nth-of-type(odd),tr:nth-of-type(even) td:nth-of-type(even){
+    background-color: bisque;
+}
+
+tr:nth-of-type(odd) td:nth-of-type(even),tr:nth-of-type(even) td:nth-of-type(odd){
+    background-color: cadetblue;
+}
