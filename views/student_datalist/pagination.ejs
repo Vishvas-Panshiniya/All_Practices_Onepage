@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+         table,th,td{
+            border: 1px solid black;
+            height: 50px;
+        }
+        th{
+            background-color: lightslategray;
+        }
+        table{
+            text-align: center;
+            margin: 0px auto;
+        }
+        h2{
+            text-align: center;
+        }
+        .page{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            margin: 0px auto;
+            /* margin: 0px auto 0px; */
+            /* background-color: brown; */
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            margin: 0px 10px;
+            border: 1px solid black;
+            font-size: 30px;
+            padding:10px;
+            background-color: cadetblue;
+            
+        }
+        tr:nth-child(odd){
+            background-color: burlywood;
+        }
+        tr:nth-child(even){
+            background-color: cadetblue;
+        }
+        .mainpage{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainpage">
+        <h2>Name:- Vishvas Panshiniya</h2>
+        <h2>Employee ID:- 24DEV065</h2>
+    </div>
+    <h2>Student_List</h2>
+    <div class="page">
+        <% if (l > 1) { %>
+        <a  class="fa-solid fa-angles-left" href="/login/dashboard/component?p=1"></a>
+        <a  class="fa-solid fa-angle-left" href="/login/dashboard/component?p=<%= Number(l)-1%>"></a>
+        <% } %>
+        <p><%= l %></p>
+        <% if(l >= 1 && l <250) { %></20>
+        <a  class="fa-solid fa-angle-right" href="/login/dashboard/component?p=<%= Number(l)+1%>"></a>
+        <a class="fa-solid fa-angles-right" href="/login/dashboard/component?p=250"></a>
+        <% } %>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <th>StudentID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Date_Of_Birth</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Zipcode</th>
+                <th>Created_Time</th>
+            </thead>
+            <tbody>
+            <%for(let i = 0 ; i < alldata2.length; i ++ ) { %>
+                <tr>
+                    <td><%= alldata2[i].studentid %></td>
+                    <td><%= alldata2[i].firstname %></td>
+                    <td><%= alldata2[i].lastname %></td>
+                    <td><%= alldata2[i].dob %></td>
+                    <td><%= alldata2[i].contact_no %></td>
+                    <td><%= alldata2[i].email %></td>
+                    <td><%= alldata2[i].address %></td>
+                    <td><%= alldata2[i].city %></td>
+                    <td><%= alldata2[i].state %></td>
+                    <td><%= alldata2[i].country %></td>
+                    <td><%= alldata2[i].zipcode %></td>
+                    <td><%= alldata2[i].created_at %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

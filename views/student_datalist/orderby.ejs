@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order By</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+         table,th,td{
+            border: 1px solid black;
+            height: 50px;
+        }
+        th{
+            background-color: lightslategray;
+        }
+        table{
+            text-align: center;
+            margin: 0px auto;
+        }
+        h2{
+            text-align: center;
+        }
+        .page{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+        }
+        .mainpage{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 30px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            margin: 0px 10px;
+            border: 1px solid black;
+            font-size: 30px;
+            padding:10px;
+            background-color: cadetblue;
+            
+        }
+        .head{
+            background-color: chocolate;
+        }
+        tr:nth-child(odd){
+            background-color: burlywood;
+        }
+        tr:nth-child(even){
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainpage">
+        <h2>Name:- Vishvas Panshiniya</h2>
+        <h2>Employee ID:- 24DEV065</h2>
+    </div>
+    <h2>Student_List</h2>
+    <div class="mainpage">
+        <form action="/orderby?p=1" method="get">
+            <select name="sort">
+                <option value="asc"  <% if (sort == "asc") { %>  selected<% } %>>Asc</option>
+                <option value="desc" <% if (sort == "desc") { %>  selected<% } %>>Desc</option>
+            </select>
+            <select name="column">
+                <option value="studentid" <% if (column == "studentid") { %>  selected<% } %>>StudentID</option>
+                <option value="firstname" <% if (column == "firstname") { %>  selected<% } %>>FirstName</option>
+                <option value="lastname" <% if (column == "lastname") { %>  selected<% } %>>LastName</option>
+                <option value="dob" <% if (column == "dob") { %>  selected<% } %>>Date_Of_Birth</option>
+                <option value="contact_no" <% if (column == "contact_no") { %>  selected<% } %>>Contact</option>
+                <option value="email" <% if (column == "email") { %>  selected<% } %>>Email</option>
+                <option value="city" <% if (column == "city") { %>  selected<% } %>>City</option>
+                <option value="state" <% if (column == "state") { %>  selected<% } %>>State</option>
+                <option value="country" <% if (column == "country") { %>  selected<% } %>>Country</option>
+                <option value="zipcode" <% if (column == "zipcode") { %>  selected<% } %>>Zipcode</option>
+                <option value="created_at" <% if (column == "created_at") { %>  selected<% } %>>Created_Time</option>
+            </select>
+            <input type="submit" value="submit">
+        </form>
+        <div class="page">
+            <% if (l > 1) { %>
+            <a  class="fa-solid fa-angles-left" href="/login/dashboard/orderby?p=1&sort=<%= sort %>&column=<%= column %>"></a>
+            <a  class="fa-solid fa-angle-left" href="/login/dashboard/orderby?p=<%= Number(l)-1%>&sort=<%= sort %>&column=<%= column %>"></a>
+            <% } %>
+            <p><%= l %></p>
+            <% if(l >= 1 && l <250) { %>
+            <a  class="fa-solid fa-angle-right" href="/login/dashboard/orderby?p=<%= Number(l)+1%>&sort=<%= sort %>&column=<%= column %>"></a>
+            <a class="fa-solid fa-angles-right" href="/login/dashboard/orderby?p=250&sort=<%= sort %>&column=<%= column %>"></a>
+            <% } %>
+        </div>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <th>StudentID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Date_Of_Birth</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Zipcode</th>
+                <th>Created_Time</th>
+            </thead>
+            <tbody>
+            <%for(let i = 0 ; i < alldata2.length; i ++ ) { %>
+                <tr class="tbody1">
+                    <td><%= alldata2[i].studentid %></td>
+                    <td><%= alldata2[i].firstname %></td>
+                    <td><%= alldata2[i].lastname %></td>
+                    <td><%= alldata2[i].dob %></td>
+                    <td><%= alldata2[i].contact_no %></td>
+                    <td><%= alldata2[i].email %></td>
+                    <td><%= alldata2[i].address %></td>
+                    <td><%= alldata2[i].city %></td>
+                    <td><%= alldata2[i].state %></td>
+                    <td><%= alldata2[i].country %></td>
+                    <td><%= alldata2[i].zipcode %></td>
+                    <td><%= alldata2[i].created_at %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

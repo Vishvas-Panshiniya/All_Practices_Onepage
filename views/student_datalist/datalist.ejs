@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student_Master_List</title>
+
+    <style>
+        table,th,td{
+            border: 1px solid black;
+            background-color:bisque;
+            height: 50px;
+        }
+        table{
+            text-align: center;
+            margin: 0px auto;
+            /* width: 100%; */
+        }
+        h2{
+            text-align: center;
+        }
+        .mainpage{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainpage">
+        <h2>Name:- Vishvas Panshiniya</h2>
+        <h2>Employee ID:- 24DEV065</h2>
+    </div>
+    <h2>Student_List</h2>
+    <div>
+        <table>
+            <tr>
+                <td>StudentID</td>
+                <td>FirstName</td>
+                <td>LastName</td>
+                <td>Date_Of_Birth</td>
+                <td>Contact</td>
+                <td>Email</td>
+                <td>Address</td>
+                <td>City</td>
+                <td>State</td>
+                <td>Country</td>
+                <td>Zipcode</td>
+                <td>Created_Time</td>
+            </tr>
+            <%for(let i = 0 ; i < alldata2.length; i ++ ) { %>
+                <tr>
+                    <td><%= alldata2[i].studentid %></td>
+                    <td><%= alldata2[i].firstname %></td>
+                    <td><%= alldata2[i].lastname %></td>
+                    <td><%= alldata2[i].dob %></td>
+                    <td><%= alldata2[i].contact_no %></td>
+                    <td><%= alldata2[i].email %></td>
+                    <td><%= alldata2[i].address %></td>
+                    <td><%= alldata2[i].city %></td>
+                    <td><%= alldata2[i].state %></td>
+                    <td><%= alldata2[i].country %></td>
+                    <td><%= alldata2[i].zipcode %></td>
+                    <td><%= alldata2[i].created_at %></td>
+                </tr>
+                <% } %>
+        </table>
+    </div>
+</body>
+</html>
