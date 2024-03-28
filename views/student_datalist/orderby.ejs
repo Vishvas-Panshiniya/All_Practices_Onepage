@@ -5,53 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order By</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- <link rel="stylesheet" href="/student_datalist/student_datalist.css"> -->
     <style>
-         table,th,td{
-            border: 1px solid black;
-            height: 50px;
-        }
-        th{
-            background-color: lightslategray;
-        }
-        table{
-            text-align: center;
-            margin: 0px auto;
-        }
-        h2{
-            text-align: center;
-        }
-        .page{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 200px;
-        }
-        .mainpage{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 10px 30px;
-        }
-        a{
-            text-decoration: none;
-            color: black;
-            margin: 0px 10px;
-            border: 1px solid black;
-            font-size: 30px;
-            padding:10px;
-            background-color: cadetblue;
-            
-        }
-        .head{
-            background-color: chocolate;
-        }
-        tr:nth-child(odd){
-            background-color: burlywood;
-        }
-        tr:nth-child(even){
-            background-color: cadetblue;
-        }
-    </style>
+        table,th,td{
+           border: 1px solid black;
+           height: 50px;
+       }
+       th{
+           background-color: lightslategray;
+       }
+       table{
+           text-align: center;
+           margin: 0px auto;
+       }
+       h2{
+           text-align: center;
+       }
+       .page{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           width: 200px;
+       }
+       .mainpage{
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           margin: 10px 30px;
+       }
+       a{
+           text-decoration: none;
+           color: black;
+           margin: 0px 10px;
+           border: 1px solid black;
+           font-size: 30px;
+           padding:10px;
+           background-color: cadetblue;
+           
+       }
+       .head{
+           background-color: chocolate;
+       }
+       tr:nth-child(odd){
+           background-color: burlywood;
+       }
+       tr:nth-child(even){
+           background-color: cadetblue;
+       }
+   </style>
 </head>
 <body>
     <div class="mainpage">
@@ -60,7 +61,7 @@
     </div>
     <h2>Student_List</h2>
     <div class="mainpage">
-        <form action="/orderby?p=1" method="get">
+        <form action="/login/dashboard/orderby?p=1" method="get">
             <select name="sort">
                 <option value="asc"  <% if (sort == "asc") { %>  selected<% } %>>Asc</option>
                 <option value="desc" <% if (sort == "desc") { %>  selected<% } %>>Desc</option>

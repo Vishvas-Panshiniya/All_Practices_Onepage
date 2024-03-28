@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student_Attendence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/attendence_report/students_atten.css">
+</head>
+<body>
+    <div class="mainpage">
+        <h2>Name:- Vishvas Panshiniya</h2>
+        <h2>Employee ID:- 24DEV065</h2>
+    </div>
+    <div class="mainpage">
+        <form action="attendence?p=1" method="get">
+            <select name="month" id="month">
+                select month
+                <option value="December" <% if (month == "December") { %>  selected<% } %>>December</option>
+                <option value="January" <% if (month == "January") { %>  selected<% } %>  >January</option>
+                <option value="February" <% if (month == "February") { %> selected <% } %> >February</option>
+              </select>
+                <select name="year" id="year">
+                    <option value="2023" <% if (year == "2023") { %>  selected<% } %>>2023</option>
+                    <option value="2024" <% if (year == "2024") { %>  selected<% } %>>2024</option>
+                </select>
+            <input type="submit" value="submit">
+        </form>
+        <p>Student Attendence Report <strong><%= month %></strong></p>
+        <div class="page">
+            <% if (l > 1) { %>
+            <a  class="fa-solid fa-angles-left" href="attendence?p=1&month=<%= month %>&year=<%= year %>"></a>
+            <a  class="fa-solid fa-angle-left" href="attendence?p=<%= Number(l)-1%>&month=<%= month %>&year=<%= year %>"></a>
+            <% } %>
+            <p><%= l %></p>
+            <% if(l >= 1 && l <20) { %>
+            <a  class="fa-solid fa-angle-right" href="attendence?p=<%= Number(l)+1%>&month=<%= month %>&year=<%= year %>"></a>
+            <a class="fa-solid fa-angles-right" href="attendence?p=20&month=<%= month %>&year=<%= year %>"></a>
+            <% } %>
+        </div>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <th>StudentID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>No Present_Day</th>
+                <th>Percentage</th>
+                <th>Extra</th>
+            </thead>
+            <tbody>
+            <%for(let i = 0 ; i < result.length; i ++ ) { %>
+                <tr>
+                    <td><%= result[i].studentid %></td>
+                    <td><%= result[i].firstname %></td>
+                    <td><%= result[i].lastname %></td>
+                    <td><%= result[i].status %></td>
+                    <% if(result[i].month == "December" || result[i].month == "January" ) { %>
+                        <td>
+                            <%= parseFloat((result[i].status/31)*100).toFixed(2) +"%" %>
+                        </td>
+                    <% } %>
+                    <% if(result[i].month == "February") { %>
+                        <td>
+                            <%= parseFloat((result[i].status/29)*100).toFixed(2) +"%" %>
+                        </td>
+                    <% } %>
+                    <td></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -31,7 +31,7 @@ exports.orderby = async (req, res) => {
         let column = req.query.column || "studentid";
         let offset = (Number(l) - 1) * 200;
         let result = await insertdata(`select *, DATE_FORMAT(dob, "%Y/%m/%d") as dob,DATE_FORMAT(created_at, "%Y/%m/%d %T") as created_at  from student_master1 order by ${column} ${sort} limit 200 offset ${offset}`);
-        res.render("orderby", {l, alldata2 : result,sort,column})
+        res.render("student_datalist/orderby", {l, alldata2 : result,sort,column})
     } catch (err) {
         console.log(err);
     }
