@@ -1,0 +1,79 @@
+/* table css */
+table,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table{
+    width: 1300px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+th{
+    background-color: grey;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.showdata{
+    background-color: white;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
+}
+
+tr:nth-child(odd){
+    background-color: burlywood;
+}
+
+tr:nth-child(even){
+    background-color: cadetblue;
+}
+
+#tbl2{
+    display: none;
+}
+
+/* button css */
+.btn1{
+    text-align: center;
+    margin: 10px auto;
+}
+
+.btn1 input{
+    border: 1px solid black;
+    background-color: lightblue;
+    width: 150px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+
+/* pagination */
+.pagination{
+    text-align: center;
+    margin: 10px;
+}
+
+.pagination input{
+    width: 100px;
+    margin: 5px;
+    padding: 5px;
+    background-color: lightblue;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+/* heading css */
+.mainpage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 30px;
+}
+

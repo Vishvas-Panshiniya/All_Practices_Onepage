@@ -18,6 +18,7 @@ const dynamicquery = require("./routers/dynamicquery");
 const columnorderby = require("./routers/columnorderby");
 const searching = require("./routers/searching")
 const delimiter_search = require("./routers/delimiter_search")
+const apifetch = require("./routers/apifetch");
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
@@ -42,6 +43,8 @@ app.use("/login", dynamicquery);
 app.use(columnorderby);
 app.use("/login", searching);
 app.use("/login",delimiter_search);
+app.use("/login",apifetch);
+
 
 app.listen(process.env.port);
 console.log(`Server is listening on port http://localhost:${process.env.port}/`);

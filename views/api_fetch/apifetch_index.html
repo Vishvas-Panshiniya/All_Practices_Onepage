@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Fetch</title>
+    <link rel="stylesheet" href="/api_fetch/apifetch.css">
+</head>
+<body onload="load()">
+
+    <div class="mainpage">
+        <h2>Name:- Vishvas Panshiniya</h2>
+        <h2>Employee ID:- 24DEV065</h2>
+    </div>
+
+    <!-- Table Show all data -->
+    <div class="pagination">
+        <input type="button" value="FirstPage" onclick="firstpage()">
+        <input type="button" value="Pervious" onclick="pervious()">
+        <span id="no"></span>
+        <input type="button" value="Next" onclick="next()">
+        <input type="button" value="LastPage" onclick="lastpage()">
+    </div>
+    <table id="tbl1"></table>
+    
+    <script src="/api_fetch/apifetch_index.js"></script>
+</body>
+</html>
