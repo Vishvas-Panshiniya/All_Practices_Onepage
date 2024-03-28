@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="/ajax_jobform/ajax_jobform.css">
+</head>
+
+<body>
+    <h2>Job Application Form</h2>
+    <div class="container">
+        <div class="row1">
+            <table class="heading-class">
+                <tr>
+                    <td class="step">Basic Details</td>
+                    <td class="step">Education Details</td>
+                    <td class="step">Work Experience</td>
+                    <td class="step">Language Known</td>
+                    <td class="step">Technologies Known</td>
+                    <td class="step">Referance Details</td>
+                    <td class="step">Preferances Details</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Form data -->
+    <div class="container">
+        <form method="post" id="form" name="form">
+
+            <!-- basic details -->
+            <div class="tab">
+                <div class="row2">
+                    <%- include("./steps/basicdetails" , {result1}) %>
+                </div>
+            </div>
+
+            <!--  education details-->
+            <div class="tab">
+                <div class="row2">
+                    <%- include("./steps/educationdetails",{result2}) %>
+                </div>
+            </div>
+
+            <!--Work Experience-->
+            <div class="tab">
+                <div class="row2">
+                    <%- include("./steps/workdetails",{result3}) %>
+                </div>
+            </div>
+
+            <!-- Language Known -->
+            <div class="tab">
+                <div class="row2">
+                    <%- include("./steps/languageknown",{result4}) %>
+                </div>
+            </div>
+
+            <!-- Technologies Known -->
+            <div class="tab">
+                <div class="row2">
+                    <%- include("./steps/technologies",{result5}) %>
+                </div>
+            </div>
+
+            <!-- Referance Contact -->
+            <div class="tab">
+                <div class="row2">
+                    <%- include("./steps/referancedetails",{result6}) %>
+                </div>
+            </div>
+
+            <!-- Preferances -->
+            <div class="tab">
+                <div class="row2">
+                    <%- include("./steps/preferancedetails",{result7}) %>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="row3">
+            <div class="column1">
+                <input type="button" id="prevBtn" onclick="nextPrev(-1)" value="Previous">
+                <input type="button" id="nextBtn" onclick="nextPrev(1)" value="Next">
+                <input type="button" id="submitbtn" onclick="submitform()" value="Submit">
+                <input type="button" id="updatebtn" onclick="updateform()" value="Update">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/ajax_jobform/ajax_jobform.js"></script>
+</body>
+
+</html>

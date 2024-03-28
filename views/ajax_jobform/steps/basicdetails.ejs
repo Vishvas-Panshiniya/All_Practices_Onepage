@@ -1,0 +1,104 @@
+<!-- Basic Details" -->
+<fieldset>
+    <table>
+        <caption>Basic Details</caption>
+        <input type="hidden" name="empid" value="<%= result1[0].empid %>">
+        <tr>
+            <td>
+                <label for="fname">FirstName <strong>:-</strong></label>
+                <input type="text" id="fname" name="fname" placeholder="FirstName" value="<%= result1[0].fname %>" tabindex="0">
+                <br><span id="s1"></span>
+            </td>
+            <td>
+                <label for="lname">LastName <strong>:-</strong></label>
+                <input type="text" id="lname" name="lname" placeholder="LastName" value="<%= result1[0].lname %>">
+                <br><span id="s2"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="designation">Designation <strong>:-</strong></label>
+                <input type="text" id="designation" name="designation" placeholder="Designation" value="<%= result1[0].designation %>">
+                <br><span id="s3"></span>
+            </td>
+            <td>
+                <label for="address1">Address 1 <strong>:-</strong></label>
+                <input type="text" id="address1" name="address1" placeholder="Address 1" value="<%= result1[0].address1 %>">
+                <br><span id="s4"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="email">Email <strong> <strong>:-</strong></strong></label>
+                <input type="text" id="email" name="email" placeholder="Email" value="<%= result1[0].email %>">
+                <br><span id="s5"></span>
+            </td>
+            <td>
+                <label for="address2">Address 2 <strong>:-</strong></label>
+                <input type="text" id="address2" name="address2" placeholder="Address 2" value="<%= result1[0].address2 %>">
+                <br><span id="s6"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="mobileno">Phone Number <strong>:-</strong></label>
+                <input type="text" id="mobileno" name="mobileno" placeholder="1234567890" value="<%= result1[0].mobileno %>">
+                <br><span id="s7"></span>
+            </td>
+            <td>
+                <label for="city">City <strong>:-</strong></label>
+                <input type="text" id="city" name="city" name="city" placeholder="City" value="<%= result1[0].city %>">
+                <br><span id="s8"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="gender">Gender <strong>:-</strong></label>
+                    <input type="radio" id="male" name="gender" value="male" <% if (result1[0].gender==='male' ) { %> checked <% } %>>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" <% if (result1[0].gender==='female' ) { %> checked <% } %>>
+                    <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other" <% if (result1[0].gender==='other' ) { %> checked <% } %>>
+                    <label for="other">Other</label>
+                <br><span id="s9"></span>
+            </td>
+            <td>
+                <label for="state">State <strong>:-</strong></label>
+                <select name="state" id="state">
+                    <option value="State">State</option>
+                    <option value="Gujarat" <% if (result1[0].state==='Gujarat' ) { %> selected <% } %>>Gujarat</option>
+                    <option value="Goa" <% if (result1[0].state==='Goa' ) { %> selected <% } %>>Goa</option>
+                    <option value="Bihar" <% if (result1[0].state==='Bihar' ) { %> selected <% } %>>Bihar</option>
+                    <option value="Madhya Pradesh" <% if (result1[0].state==='Madhya Pradesh' ) { %> selected <% } %>>Madhya Pradesh</option>
+                    <option value="Maharashtra" <% if (result1[0].state==='Maharashtra' ) { %> selected <% } %>>Maharashtra</option>
+                    <option value="Punjab" <% if (result1[0].state==='Punjab' ) { %> selected <% } %>>Punjab</option>
+                    <option value="Rajasthan" <% if (result1[0].state==='Rajasthan' ) { %> selected <% }%>>Rajasthan </option>
+                </select>
+                <br><span id="s10"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="rstatus">Relationship Status <strong>:-</strong></label>
+                <select name="rstatus" id="rstatus">
+                    <option value="status">Status</option>
+                    <option value="Single" <% if (result1[0].rstatus==='Single' ) { %> selected <% } %>>Single</option>
+                    <option value="Married" <% if (result1[0].rstatus==='Married' ) { %> selected <% } %>>Married </option>
+                </select>
+                <br><span id="s11"></span>
+            </td>
+            <td>
+                <label for="zipcode">Zip Code <strong>:-</strong></label>
+                <input type="text" id="zipcode" name="zipcode" value="<%= result1[0].zipcode %>" placeholder="123456">
+                <br><span id="s12"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="dob">Date Of Birth <strong>:-</strong></label>
+                <input type="text" id="dob" name="dob" placeholder="yyyy-mm-dd" value="<%= result1[0].dob %>">
+                <br><span id="s13"></span>
+            </td>
+        </tr>
+    </table>
+</fieldset>

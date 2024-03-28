@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Data</title>
+    <link rel="stylesheet" href="/ajax_jobform/ajax_jobform.css">
+</head>
+<body>
+    <h2>List Data</h2>
+    <div class="row4">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Update Data</th>
+        </tr>
+        
+            <% for (let i = 0; i < result1.length; i++) { %>
+            <tr>
+                <td><%= result1[i].empid %></td>
+                <td><%= result1[i].fname %></td>
+                <td><%= result1[i].lname %></td>
+                <td><div class="link1"><a href="/login/dashboard/jobdatashow?id=<%= result1[i].empid %>">Update Data</a></div></td>
+            </tr>
+            <% } %>
+    </table>
+</div>
+</body>
+</html>

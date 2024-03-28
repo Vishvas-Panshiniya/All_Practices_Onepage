@@ -1,0 +1,64 @@
+<!--Work Experience-->
+<fieldset>
+    <table>
+        <caption>Work Experience</caption>
+        <tbody class="worktable">
+        <% if(result3.length === 0) { %>
+            <input type="hidden" name="workid[]"> 
+            <tr class="work">
+                <td>
+                    <label for="company">Company Name:-</label>
+                    <input type="text" id="company1" name="company[]" placeholder="Company Name" tabindex="0">
+                </td>
+                <td>
+                    <label for="c_designation">Designation:-</label>
+                    <input type="text" id="designation1" name="c_designation[]" placeholder="Designation">
+                    <!-- <span id="s29"></span> -->
+                </td>
+                <td>
+                    <label for="startdate">From:-</label>
+                    <input type="text" id="startdate1" name="startdate[]" placeholder="yyyy-mm-dd">
+                    <!-- <span id="s30"></span> -->
+                </td>
+                <td>
+                    <label for="enddate">To:-</label>
+                    <input type="text" id="enddate1" name="enddate[]" placeholder="yyyy-mm-dd">
+                    <!-- <span id="s31"></span> -->
+                </td>
+            </tr>
+        <% } %>
+
+        <% if(result3.length > 0) { %>
+        <% for(let j=0; j < result3.length; j++) { %>
+            <input type="hidden" name="workid[]" value="<%= result3[j].workid %>">
+            <tr class="work">
+                <td>
+                    <label for="company">Company Name:-</label>
+                    <input type="text" id="company1" name="company[]" placeholder="Company Name" value="<%= result3[j].company_name %>" tabindex="0">
+                </td>
+                <td>
+                    <label for="c_designation">Designation:-</label>
+                    <input type="text" id="designation1" name="c_designation[]" placeholder="Designation" value="<%= result3[j].com_designation %>">
+                    <!-- <span id="s29"></span> -->
+                </td>
+                <td>
+                    <label for="startdate">From:-</label>
+                    <input type="text" id="startdate1" name="startdate[]" placeholder="yyyy-mm-dd" value="<%= result3[j].start_date %>">
+                    <!-- <span id="s30"></span> -->
+                </td>
+                <td>
+                    <label for="enddate">To:-</label>
+                    <input type="text" id="enddate1" name="enddate[]" placeholder="yyyy-mm-dd" value="<%= result3[j].end_date %>">
+                    <!-- <span id="s31"></span> -->
+                </td>
+            </tr>
+            <% } %>
+            <% } %>
+        </tbody>
+        </table>
+        <div class="btn">
+            <span id="s28"></span>
+            <input type="button" value="+" onclick="addwork()">
+            <input type="button" value="-" onclick="removework()">
+        </div>
+</fieldset>

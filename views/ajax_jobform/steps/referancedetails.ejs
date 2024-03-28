@@ -1,0 +1,50 @@
+<!-- Referance Contact -->
+<fieldset>
+    <table>
+        <caption>Referance Contact</caption>
+        <tbody class="refertable">
+        <% if(result6.length === 0) { %> 
+            <input type="hidden" id="rid"  name="rid[]">
+            <tr class="refer1">
+                <td>
+                    <label for="rname">Name:-</label>
+                    <input type="text" id="rname1" name="rname[]" placeholder="Relation" tabindex="0">
+                </td>
+                <td>
+                    <label for="rno">Contact Number:-</label>
+                    <input type="tel" id="rno1" name="rno[]" placeholder="Phone Number">
+                </td>
+                <td>
+                    <label for="relation">Relation:-</label>
+                    <input type="text" id="relation1" name="relation[]" placeholder="Relation">
+                </td>
+            </tr>
+        <% } %>
+        
+        <% if(result6.length > 0) { %>
+        <% for(let y = 0; y < result6.length; y++) { %>
+            <input type="hidden" id="rid"  name="rid[]" value="<%= result6[y].rid %>">
+            <tr class="refer1">
+                <td>
+                    <label for="rname">Name:-</label>
+                    <input type="text" id="rname1" name="rname[]" placeholder="Relation" value="<%= result6[y].r_name %>" tabindex="0">
+                </td>
+                <td>
+                    <label for="rno">Contact Number:-</label>
+                    <input type="tel" id="rno1" name="rno[]" placeholder="Phone Number" value="<%= result6[y].r_no %>">
+                </td>
+                <td>
+                    <label for="relation">Relation:-</label>
+                    <input type="text" id="relation1" name="relation[]" placeholder="Relation" value="<%= result6[y].r_relation %>">
+                </td>
+            </tr>
+            <% } %>
+            <% } %>
+        </tbody>
+        </table>
+        <div class="btn">
+                <span id="s47"></span>
+                <input type="button" value="+" onclick="addrefer()">
+                <input type="button" value="-" onclick="removerefer()">
+        </div>
+</fieldset>

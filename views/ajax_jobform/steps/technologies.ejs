@@ -1,0 +1,162 @@
+<!-- Technologies Known -->
+<fieldset>
+    <table>
+        <caption>Technologies Known</caption>
+        <tr>
+            <td>
+                <input type="checkbox" id="t1" name="technology[]" value="mysql" tabindex="0"
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='mysql' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="t1">MySql</label>
+                            <span id="s43"></span>
+            </td>
+            <td>
+                <input type="radio" id="tech1" name="techno1" value="beginer" 
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='mysql' && element.tech_level==='beginer' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="tech1">Beginer</label>
+            </td>
+            <td>
+                <input type="radio" id="tech2" name="techno1" value="mideator" 
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='mysql' && element.tech_level==='mideator' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="tech2">Mideator</label>
+            </td>
+            <td>
+                <input type="radio" id="tech3" name="techno1" value="expert" 
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='mysql' && element.tech_level==='expert' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="tech3">Expert</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" id="t2" name="technology[]" value="php" 
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='php' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="t2">PHP</label>
+                            <span id="s44"></span>
+            </td>
+            <td>
+                <input type="radio" id="tech4" name="techno2" value="beginer"
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='php' && element.tech_level==='beginer' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="tech4">Beginer</label>
+            </td>
+            <td>
+                <input type="radio" id="tech5" name="techno2" value="mideator"
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='php' && element.tech_level==='mideator' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="tech5">Mideator</label>
+            </td>
+            <td>
+                <input type="radio" id="tech6" name="techno2" value="expert" 
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='php' && element.tech_level==='expert' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="tech6">Expert</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" id="t3" name="technology[]" value="laravel"
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='laravel' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="t3">Laravel</label>
+                            <span id="s45"></span>
+            </td>
+            <td>
+                <input type="radio" id="tech7" name="techno3" value="beginer" 
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='laravel' && element.tech_level==='beginer' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="tech7">Beginer</label>
+            </td>
+            <td>
+                <input type="radio" id="tech8" name="techno3" value="mideator" 
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='laravel' && element.tech_level==='mideator' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="tech8">Mideator</label>
+            </td>
+            <td>
+                <input type="radio" id="tech9" name="techno3" value="expert" 
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='laravel' && element.tech_level==='expert' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="tech9">Expert</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" id="t4" name="technology[]" value="oracle" 
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='oracle' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="t4">Oracle</label>
+                            <span id="s46"></span>
+            </td>
+            <td>
+                <input type="radio" id="tech10" name="techno4" value="beginer" 
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='oracle' && element.tech_level==='beginer' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="tech10">Beginer</label>
+            </td>
+            <td>
+                <input type="radio" id="tech11" name="techno4" value="mideator" 
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='oracle' && element.tech_level==='mideator' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="tech11">Mideator</label>
+            </td>
+            <td>
+                <input type="radio" id="tech12" name="techno4" value="expert" 
+                <% if(result5.length > 0) { %>
+                    <% result5.forEach(element=> { %>
+                        <% if(element.tech_name==='oracle' && element.tech_level==='expert' ) { %> checked <% } %>
+                    <% }) %>
+                <% } %>>
+                            <label for="tech12">Expert</label>
+            </td>
+        </tr>
+    </table>
+</fieldset>

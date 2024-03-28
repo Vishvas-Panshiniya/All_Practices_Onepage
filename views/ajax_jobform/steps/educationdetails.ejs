@@ -1,0 +1,68 @@
+<!-- Education Details" -->
+<fieldset>
+    <table>
+        <caption>Education Details</caption>
+        <tbody class="edutable">
+        <% if(result2.length === 0) { %> 
+            <input type="hidden" name="courseid[]">
+            <tr  class="edu">
+                <td>
+                    <label for="course">Course Name:-</label>
+                    <select name="course[]" id="course1" tabindex="0">
+                        <option value="select">Select</option>
+                        <option value="ssc">SSC</option>
+                        <option value="hsc">HSC</option>
+                        <option value="be">BE</option>
+                        <option value="me">ME</option>
+                        <option value="phd">PHD</option>
+                    </select>
+                </td>
+                <td>
+                    <label for="year">Passing Year:-</label>
+                    <input type="text" id="year1" class="year1" name="year[]" placeholder="yyyy">
+                    <!-- <span id="s15"></span> -->
+                </td>
+                <td>
+                    <label for="per">Percentage:-</label>
+                    <input type="text" id="per1" class="year1" name="per[]" placeholder="Percentage">
+                    <!-- <span id="s16"></span> -->
+                </td>
+            </tr>
+        <% } %>
+        
+        <% if(result2.length > 0) { %>
+        <% for(let i=0; i < result2.length; i++) { %>
+            <input type="hidden" name="courseid" value="<%= result2[i].courseid %>">
+            <tr  class="edu">
+                <td>
+                    <label for="course">Course Name:-</label>
+                    <select name="course[]" id="course1" tabindex="0">
+                        <option value="select">Select</option>
+                        <option value="ssc" <% if (result2[i].coursename==='ssc' ) { %> selected <% } %>>SSC</option>
+                        <option value="hsc" <% if (result2[i].coursename==='hsc' ) { %> selected <% } %>>HSC</option>
+                        <option value="be" <% if (result2[i].coursename==='be' ) { %> selected <% } %>>BE</option>
+                        <option value="me" <% if (result2[i].coursename==='me' ) { %> selected <% } %>>ME</option>
+                        <option value="phd" <% if (result2[i].coursename==='phd' ) { %> selected <% } %>>PHD</option>
+                    </select>
+                </td>
+                <td>
+                    <label for="year">Passing Year:-</label>
+                    <input type="text" id="year1" class="year1" name="year[]" placeholder="yyyy" value="<%= result2[i].passing_year %>">
+                    <!-- <span id="s15"></span> -->
+                </td>
+                <td>
+                    <label for="per">Percentage:-</label>
+                    <input type="text" id="per1" class="year1" name="per[]" placeholder="Percentage" value="<%= result2[i].percantage %>">
+                    <!-- <span id="s16"></span> -->
+                </td>
+            </tr>
+            <% } %>
+            <% } %>
+        </tbody>
+    </table>
+    <div class="btn">
+        <span id="s14"></span>
+        <input type="button" value="+" onclick="addedu()">
+        <input type="button" value="-" onclick="removeedu()">
+    </div>
+</fieldset>

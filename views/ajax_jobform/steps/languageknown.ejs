@@ -1,0 +1,99 @@
+<!--Language Known-->
+<fieldset>
+    <table>
+        <caption>Language Known</caption>
+        <tr>
+            <td>
+                <input type="checkbox" id="gujarati" name="l_known[]" value="Gujarati" tabindex="0"
+                    <% result4.forEach(element=> { %>
+                        <% if(element.l_name==='Gujarati' ) { %> checked <% } %>
+                    <% }); %>>
+                            <label for="gujarati">Gujarati</label>
+                            <br><span id="s40"></span>
+            </td>
+            <td>
+                <input type="checkbox" id="r1" name="r1" value="Yes"
+                    <% result4.forEach(element=> { %>
+                        <% if (element.l_name==='Gujarati' && element.l_read==='Yes' ) { %> checked <% } %>
+                    <% }) %>>
+                            <label for="r1">Read</label>
+            </td>
+            <td>
+                <input type="checkbox" id="w1" name="w1" value="Yes" 
+                    <% result4.forEach(element=> { %>
+                        <% if (element.l_name==='Gujarati' && element.l_read==='Yes' ) { %> checked <% } %>
+                    <% }) %>>
+                            <label for="w1">Write</label>
+            </td>
+            <td>
+                <input type="checkbox" id="ss1" name="ss1" value="Yes"
+                    <% result4.forEach(element=> { %>
+                        <% if (element.l_name==='Gujarati' && element.l_read==='Yes' ) { %> checked <% } %>
+                    <% }) %>>
+                            <label for="ss1">Speak</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" id="hindi" name="l_known[]" value="Hindi" 
+                    <% result4.forEach(element=> { %>
+                        <% if(element.l_name==='Hindi' ) { %> checked <% } %>
+                    <% }) %>>
+                            <label for="hindi">Hindi</label>
+                            <br><span id="s41"></span>
+            </td>
+            <td>
+                <input type="checkbox" id="r2" name="r2" value="Yes"                 
+                    <% result4.forEach(element=> { %>
+                        <% if (element.l_name==='Hindi' && element.l_read==='Yes' ) { %> checked <% } %>
+                    <% }) %>>
+                            <label for="r2">Read</label>
+            </td>
+            <td>
+                <input type="checkbox" id="w2" name="w2" value="Yes"                 
+                    <% result4.forEach(element=> { %>
+                        <% if (element.l_name==='Hindi' && element.l_read==='Yes' ) { %> checked <% } %>
+                    <% }) %>>
+                            <label for="w2">Write</label>
+            </td>
+            <td>
+                <input type="checkbox" id="ss2" name="ss2" value="Yes"                 
+                    <% result4.forEach(element=> { %>
+                        <% if (element.l_name==='Hindi' && element.l_read==='Yes' ) { %> checked <% } %>
+                    <% }) %>>
+                            <label for="ss2">Speak</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" id="english" name="l_known[]" value="English"
+                    <% result4.forEach(element=> { %>
+                        <% if(element.l_name==='English' ) { %> checked <% } %>
+                    <% }) %>>
+                            <label for="english">English</label>
+                            <br><span id="s42"></span>
+            </td>
+            <td>
+                <input type="checkbox" id="r3" name="r3" value="Yes"
+                    <% result4.forEach(element=> { %>
+                        <% if (element.l_name==='English' && element.l_read==='Yes' ) { %> checked <% } %>
+                    <% }) %>>
+                            <label for="r3">Read</label>
+            </td>
+            <td>
+                <input type="checkbox" id="w3" name="w3" value="Yes"
+                    <% result4.forEach(element=> { %>
+                        <% if (element.l_name==='English' && element.l_read==='Yes' ) { %> checked <% } %>
+                    <% }) %>>
+                            <label for="w3">Write</label>
+            </td>
+            <td>
+                <input type="checkbox" id="ss3" name="ss3" value="Yes"
+                    <% result4.forEach(element=> { %>
+                        <% if (element.l_name==='English' && element.l_read==='Yes' ) { %> checked <% } %>
+                    <% }) %>>
+                            <label for="ss3">Speak</label>
+            </td>
+        </tr>
+    </table>
+</fieldset>

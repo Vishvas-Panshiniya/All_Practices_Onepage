@@ -1,0 +1,53 @@
+<!-- Preferances -->
+<fieldset>
+    <table>
+        <caption>Preferances</caption>
+        <% for(let z=0; z < result7.length; z++) { %>
+            <tr>
+                <td>
+                    <label for="preferdlocation">Preferd Location:-</label>
+                    <select name="location" id="location" tabindex="0">
+                        <option value="location">Location</option>
+                        <option value="ahemdabad" <% if (result7[z].location==='ahemdabad' ) { %> selected <% } %>
+                                >Ahemdabad</option>
+                        <option value="rajkot" <% if (result7[z].location==='rajkot' ) { %> selected <% } %>>Rajkot
+                        </option>
+                    </select>
+                    <span id="s53"></span>
+                </td>
+                <td>
+                    <label for="department">Department:-</label>
+                    <select name="department" id="department">
+                        <option value="department">Department</option>
+                        <option value="development" <% if (result7[z].department==='development' ) { %> selected <% } %>
+                                >Development</option>
+                        <option value="design" <% if (result7[z].department==='design' ) { %> selected <% } %>>Design
+                        </option>
+                        <option value="marketing" <% if (result7[z].department==='marketing' ) { %> selected <% } %>
+                                >Marketing</option>
+                    </select>
+                    <span id="s54"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="notice">Notice Period:-</label>
+                    <input type="text" id="notice" name="notice" placeholder="1 month" value="<%= result7[z].notice %>">
+                    <span id="s55"></span>
+                </td>
+                <td>
+                    <label for="expactc">Expacted CTC:-</label>
+                    <input type="text" id="expactc" name="expactc" placeholder="8 LPA"
+                        value="<%= result7[z].expacted_ctc %>">
+                    <span id="s56"></span>
+                </td>
+                <td>
+                    <label for="currentctc">Current CTC:-</label>
+                    <input type="text" id="currentctc" name="currentctc" placeholder="4.6 LPA"
+                        value="<%= result7[z].current_ctc %>">
+                    <span id="s57"></span>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+</fieldset>

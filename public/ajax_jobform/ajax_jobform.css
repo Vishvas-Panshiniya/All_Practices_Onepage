@@ -1,0 +1,128 @@
+.container {
+    max-width: 1180px;
+    margin: 0px auto;
+}
+
+body{
+    background-color: lightgray;
+}
+
+fieldset{
+    background-color: white;
+}
+
+caption{
+    font-size: 20px;
+    text-align: center;
+    margin: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 1px solid #c4c4c4;
+    background-color: lightgrey;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.heading-class td {
+    border: 1px solid #c4c4c4;
+    border-collapse: collapse;
+    height: 60px;
+    width: 200px;
+    margin: 0px auto;
+    background-color: cadetblue;
+    text-align: center;
+}
+
+.row2 td {
+    border: 1px dotted #c4c4c4;
+    border-collapse: collapse;
+    padding: 10px;
+    border-radius: 20px;
+    /* background-color: aqua; */
+}
+
+.row2 table {
+    width: 100%;
+}
+
+.row2 {
+    margin: 20px 0px;
+}
+
+
+.tab {
+    display: none;
+}
+
+.column1 {
+    text-align: center;
+    /* background-color: aqua; */
+}
+
+.column1 input {
+    height: 30px;
+    width: 100px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: cadetblue;
+    /* position: fixed; */
+}
+
+
+.step {
+    opacity: 0.5;
+    /* Set the default opacity */
+}
+
+/* Style for the current step */
+.step.active {
+    opacity: 1;
+}
+
+span {
+    color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btn{
+    float: right;
+    margin: 5px 10px;
+}
+
+.btn input{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: cadetblue;
+}
+
+/* listdata */
+.row4 table,.row4 th,.row4 td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.row4 table{
+    margin: 0px auto;
+    width: 500px;
+    background-color: darkgray;
+    text-align: center;
+}
+.row4 th{
+    background-color: burlywood;
+}
+.link1 a{
+    text-decoration: none;
+    color: black;
+}
+.link1{
+    margin: 5px;
+    text-align: center;
+    margin-left: 15%;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 150px;
+    background-color: lightblue;
+    padding: 5px 0px;
+}
