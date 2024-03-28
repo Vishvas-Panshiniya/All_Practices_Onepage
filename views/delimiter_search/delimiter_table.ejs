@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/delimiter_search/delimiter_search.css">
+</head>
+<body>
+    <div class="table1">
+        <table>
+            <thead>
+                <th>StudentID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Date Of Birth</th>
+                <th>Moblie No</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Zipcode</th>
+            </thead>
+            <tbody>
+            <%for(let i = 0 ; i < alldata2.length; i ++ ) { %>
+                <tr class="tbody1">
+                    <td><%= alldata2[i].studentid %></td>
+                    <td><%= alldata2[i].firstname %></td>
+                    <td><%= alldata2[i].lastname %></td>
+                    <td><%= alldata2[i].dob %></td>
+                    <td><%= alldata2[i].contact_no %></td>
+                    <td><%= alldata2[i].email %></td>
+                    <td><%= alldata2[i].city %></td>
+                    <td><%= alldata2[i].state %></td>
+                    <td><%= alldata2[i].country %></td>
+                    <td><%= alldata2[i].zipcode %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

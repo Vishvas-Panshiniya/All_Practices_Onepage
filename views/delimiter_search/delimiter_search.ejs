@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/delimiter_search/delimiter_search.css">
+</head>
+<body>
+    <div class="f1">
+        <form method="get" action="/login/dashboard/delimitersearch">
+          <input type="text" id="search" name="search" placeholder="searchby" tabindex="0" value="<%= show %>">
+          <input type="submit" value="Go"  class="submit">
+        </form>
+      </div>
+      <table>
+        <tr>
+          <td>FirstName</td>
+          <td>LastName</td>
+          <td>Email</td>
+          <td>Moblie No</td>
+          <td>Dob</td>
+          <td>City</td>
+          
+        </tr>
+        <tr>
+          <td>_</td>
+          <td>^</td>
+          <td>$</td>
+          <td>{</td>
+          <td>}</td>
+          <td>:</td>
+        </tr>
+      </table>
+</body>
+</html>
