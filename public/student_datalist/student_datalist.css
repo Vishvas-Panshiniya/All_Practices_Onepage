@@ -1,6 +1,5 @@
 table,th,td{
     border: 1px solid black;
-    background-color:bisque;
     height: 50px;
 }
 table{
@@ -25,10 +24,7 @@ h2{
 th{
     background-color: lightslategray;
 }
-/* table{
-    text-align: center;
-    margin: 0px auto;
-} */
+
 h2{
     text-align: center;
 }
