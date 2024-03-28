@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/dynamic_queryrun/component.css">
+</head>
+<body>
+    <div class="mainpage">
+        <h2>Name:- Vishvas Panshiniya</h2>
+        <h2>Employee ID:- 24DEV065</h2>
+    </div>
+    <div class="form">
+        <form method="get" action="/login/dashboard/sqlquery">
+            <label for="sql">SQL Query :-</label>
+            <input type="text" name="sql" id="sql">
+            <input type="submit" value="Run Query" id="submit">
+        </form>
+    </div>
+    <div  class="r1">
+        <div>
+            <table class="table1">
+                <tr><th><strong>TableName:-</strong></th></tr>
+                <tr><td> student_master</td></tr>
+                <tr><td>attendence_master</td></tr>
+                <tr><td>subject_master</td></tr>
+                <tr><td>exam_master</td></tr>
+                <tr><td>exam_record</td></tr>
+            </table>
+        </div>
+
+        
+    <% if(l == 1) { %>
+        <div>
+                <p>Query: <strong><%= query %></strong></p>
+                <h4>SQL-QUERY OUTPUT</h4>
+        </div> 
+    </div>
+        <div class="page">
+            <% if (a > 1) { %>
+            <a  class="fa-solid fa-angles-left icon" href="sqlquery?p=1&sql=<%= query %>"></a>
+            <a  class="fa-solid fa-angle-left icon" href="sqlquery?p=<%= Number(a)-1%>&sql=<%= query %>"></a>
+            <% } %>
+            <% if(page != 1) { %>
+            <p><%= a %></p>
+            <% } %>
+            <% if(a >= 1 && a < page) { %>
+            <a  class="fa-solid fa-angle-right icon" href="sqlquery?p=<%= Number(a)+1%>&sql=<%= query %>"></a>
+            <a class="fa-solid fa-angles-right icon" href="sqlquery?p=<%= page %>&sql=<%= query %>"></a>
+            <% } %>
+        </div>
+    <table class="table2">
+        <tr>
+            <% Object.keys(result2[0]).forEach(function(key){ %>
+                <th><%= key %></th>
+            <% }) %>
+        </tr>
+        <tr>
+            <% result2.forEach(function(value){ %>
+                <tr>
+                    <% Object.values(value).forEach(function(value){ %>
+                        <td><%= value %></td>
+                    <% }) %>
+                </tr>
+            <% }) %>
+        </tr>
+    </table>
+<% } %>
+</body>
+</html>

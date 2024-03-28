@@ -14,6 +14,7 @@ const events = require("./routers/events");
 const student_datalist = require("./routers/student_datalist");
 const attendence = require("./routers/students_atten")
 const student_result = require("./routers/student_result")
+const dynamicquery = require("./routers/dynamicquery");
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
@@ -34,6 +35,7 @@ app.use("/login" , events)
 app.use("/login" , student_datalist)
 app.use("/login" , attendence)
 app.use("/login", student_result);
+app.use("/login", dynamicquery);
 
 app.listen(process.env.port);
 console.log(`Server is listening on port http://localhost:${process.env.port}/`);
