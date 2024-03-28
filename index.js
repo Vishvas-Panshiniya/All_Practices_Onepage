@@ -22,6 +22,7 @@ const apifetch = require("./routers/apifetch");
 const ajaxdropdown = require("./routers/ajaxdropdown");
 const ajaxjobform = require("./routers/ajaxjobform");
 const jobform = require("./routers/jobform")
+const htmltask = require("./routers/htmltask")
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
@@ -50,6 +51,7 @@ app.use("/login",apifetch);
 app.use("/login",ajaxdropdown);
 app.use("/login", ajaxjobform);
 app.use("/login", jobform);
+app.use("/login",htmltask);
 
 
 app.listen(process.env.port);
