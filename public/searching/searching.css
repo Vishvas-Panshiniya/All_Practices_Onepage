@@ -1,0 +1,77 @@
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    margin: 0px auto 20px;
+}
+.arrow{
+    text-decoration: none;
+    color: black;
+    margin: 0px 10px;
+    border: 1px solid black;
+    font-size: 30px;
+    padding:10px;
+    background-color: cadetblue;
+}
+#form2{
+  display: none;
+}
+.show{
+  margin: 20px;
+}
+.f1{
+  display: flex;
+  align-items: center;
+  /* margin-left: 80px; */
+  justify-content: center;
+}
+.f2{
+  display: flex;
+  margin: 0px 40px;
+}
+input,select{
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: burlywood;
+  /* outline: none; */
+}
+label{
+  border: 1px solid black;
+  margin: 0px 5px;
+  padding: 5px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: burlywood;
+}
+
+.mainpage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 30px;
+}
+h2{
+    text-align: center;
+}
+body{
+    background-color: lightblue;
+}
+
+table,th,td{
+    border: 1px solid black;
+}
+th{
+    background-color: #687B60;
+}
+table{
+    margin: 0px auto;
+}
+tr:nth-child(odd){
+    background-color:darkgray;
+}
+tr:nth-child(even){
+    background-color:darksalmon;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/searching/searching.css">
+</head>
+<body>
+    <div class="page">
+        <% if(page >1) { %>
+        <% if (l > 1) { %>
+        <a  class="fa-solid fa-angles-left arrow" href="?p=1&id=<%= id %>&firstname=<%= fname %>&lastname=<%= lname %>&email<%= email %>&city=<%= city %>"></a>
+        <a  class="fa-solid fa-angle-left arrow" href="?p=<%= Number(l)-1%>&id=<%= id %>&firstname=<%= fname %>&lastname=<%= lname %>&email<%= email %>&city=<%= city %>"></a>
+        <% } %>
+        <p><%= l %></p>
+        <% if(l >= 1 && l < page) { %>
+        <a  class="fa-solid fa-angle-right arrow" href="?p=<%= Number(l)+1%>&id=<%= id %>&firstname=<%= fname %>&lastname=<%= lname %>&email<%= email %>&city=<%= city %>"></a>
+        <a class="fa-solid fa-angles-right arrow" href="?p=<%= page %>&id=<%= id %>&firstname=<%= fname %>&lastname=<%= lname %>&email<%= email %>&city=<%= city %>"></a>
+        <% } %>
+        <% } %>
+    </div>
+</body>
+</html>

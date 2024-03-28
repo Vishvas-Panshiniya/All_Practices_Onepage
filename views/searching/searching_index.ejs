@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order By</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/searching/searching.css">
+</head>
+<body>
+    <div class="mainpage">
+        <h2>Name:- Vishvas Panshiniya</h2>
+        <h2>Employee ID:- 24DEV065</h2>
+    </div>
+    <h2>Search Student Data</h2>
+    <!-- search -->
+    <%- include('./search') %>
+
+    <!-- pagination -->
+     <%- include('./searching_pagination',{l,page,id}) %>
+
+    <!-- table data list -->
+   <%- include('./searching_table',{alldata2}) %>
+</body>
+</html>
