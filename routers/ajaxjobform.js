@@ -5,9 +5,9 @@ const router = express.Router();
 
 router.route("/dashboard/ajaxjobform").get(authtoken,jobindex);
 router.route("/dashboard/jobdatasubmit").post(authtoken,jobsubmit);
-router.route("/dashboard/joblistdata").get(joblistdata);
-router.route("/dashboard/jobdatashow").get(jobupdate);
-router.route("/dashboard/jobdataupdate").post(updatejobdata);
+router.route("/dashboard/joblistdata").get(authtoken,joblistdata);
+router.route("/dashboard/jobdatashow").get(authtoken,jobupdate);
+router.route("/dashboard/jobdataupdate").post(authtoken,updatejobdata);
 
 
 module.exports = router;

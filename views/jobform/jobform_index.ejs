@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job-Application-From3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/jobform/jobform.css">
+</head>
+<body>
+
+    <h2 style="text-align: center;">Job Application Form</h2>
+<div class="container">
+    <form method="post" action="/login/dashboard/simplejobsubmit" id="form" name="form" onsubmit="return validatefunction()">
+                <!-- Basic Details" -->
+            <table>
+                <caption>Basic Details</caption>
+                <tr>
+                    <td>
+                        <label for="fname">FirstName:-</label>
+                        <input type="text" id="fname" name="fname" placeholder="FirstName">
+                        <span id="s1"></span>
+                    </td>
+                    <td>
+                        <label for="lname">LastName:-</label>
+                        <input type="text" id="lname" name="lname" placeholder="LastName">
+                        <span id="s2"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="designation">Designation:-</label>
+                        <input type="text" id="designation" name="designation" placeholder="Designation">
+                        <span id="s3"></span>
+                    </td>
+                    <td>
+                        <label for="address1">Address 1:-</label>
+                        <input type="text" id="address1" name="address1" placeholder="Address 1">
+                        <span id="s4"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="Email">
+                        <span id="s5"></span>
+                    </td>
+                    <td>
+                        <label for="address2">Address 2:-</label>
+                        <input type="text" id="address2" name="address2" placeholder="Address 2">
+                        <span id="s6"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="mobileno">Phone Number:-</label>
+                        <input type="text" id="mobileno" name="mobileno" placeholder="1234567890">
+                        <span id="s7"></span>
+                    </td>
+                    <td>
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" name="city" placeholder="City">
+                        <span id="s8"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="gender">Gender</label>
+                            <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                            <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                        <span id="s9"></span>
+                    </td>
+                    <td>
+                        <label for="state">State:-</label>
+                        <select name="state" id="state">
+                            <option value="State">State</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                        </select>
+                        <span id="s10"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="rstatus">Relationship Status:-</label>
+                        <select name="rstatus" id="rstatus">
+                            <option value="status">Status</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                        </select>
+                        <span id="s11"></span>
+                    </td>
+                    <td>
+                        <label for="zipcode">Zip Code:-</label>
+                        <input type="text" id="zipcode" name="zipcode">
+                        <span id="s12"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="dob">Date Of Birth:-</label>
+                        <input type="text" id="dob" name="dob" placeholder="yyyy-mm-dd">
+                        <span id="s13"></span>
+                    </td>
+                </tr>  
+            </table>
+            <br><br>
+                <!-- Education Details" -->
+        <table class="edutable">
+                <caption>Education Details</caption>
+                <tr>
+                    <td colspan="4" style="text-align: right;">
+                        <span id="s14"></span>
+                        <input type="button" value="+" onclick="addedu()">
+                        <input type="button" value="-" onclick="removeedu()">
+                    </td>
+                </tr>
+                <tr class="edu">
+                    <td>
+                        <label for="course">Course Name:-</label>
+                        <!-- <input type="text" id="course1"  class="course1" name="course[]" placeholder="Course Name"> -->
+                        <select name="course[]" id="course1">
+                            <option value="select">Select</option>
+                            <option value="ssc">SSC</option>
+                            <option value="hsc">HSC</option>
+                            <option value="be">BE</option>
+                            <option value="me">ME</option>
+                            <option value="phd">PHD</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="year">Passing Year:-</label>
+                        <input type="text" id="year1"  class ="year1" name="year[]" placeholder="yyyy">
+                        <!-- <span id="s15"></span> -->
+                    </td>
+                    <td>
+                        <label for="per">Percentage:-</label>
+                        <input type="text" id="per1"  class ="year1" name="per[]" placeholder="Percentage">
+                        <!-- <span id="s16"></span> -->
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+                <!--Work Experience-->
+            <table class="worktable">
+                <caption>Work Experience</caption>
+                <tr>
+                    <td colspan="4" style="text-align: right;">
+                        <span id="s28"></span>
+                        <input type="button" value="+" onclick="addwork()">
+                        <input type="button" value="-" onclick="removework()">
+                    </td>
+                </tr>
+                    <tr class="work">
+                        <td>
+                            <label for="company">Company Name:-</label>
+                            <input type="text" id="company1" name="company[]" placeholder="Company Name">
+                            
+                        </td>
+                        <td>
+                            <label for="c_designation">Designation:-</label>
+                            <input type="text" id="designation1" name="c_designation[]" placeholder = "Designation">
+                            <!-- <span id="s29"></span> -->
+                        </td>
+                        <td>
+                            <label for="startdate">From:-</label>
+                            <input type="text" id="startdate1" name="startdate[]" placeholder="yyyy-mm-dd">
+                            <!-- <span id="s30"></span> -->
+                        </td>
+                        <td>
+                            <label for="enddate">To:-</label>
+                            <input type="text" id="enddate1" name="enddate[]" placeholder="yyyy-mm-dd">
+                            <!-- <span id="s31"></span> -->
+                        </td>
+                    </tr>
+            </table>
+            <br><br>
+                <!--Language Known-->
+            <table>
+                        <caption>Language Known</caption>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="gujarati" name="l_known[]" value="Gujarati">
+                                <label for="gujarati">Gujarati</label>
+                                <span id="s40"></span>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="r1" name="r1" value="Yes">
+                                <label for="r1">Read</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="w1" name="w1" value="Yes">
+                                <label for="w1">Write</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="ss1" name="ss1" value="Yes">
+                                <label for="ss1">Speak</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="hindi" name="l_known[]" value="Hindi">
+                                <label for="hindi">Hindi</label>
+                                <span id="s41"></span>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="r2" name="r2" value="Yes">
+                                <label for="r2">Read</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="w2" name="w2" value="Yes">
+                                <label for="w2">Write</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="ss2" name="ss2" value="Yes">
+                                <label for="ss2">Speak</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="english" name="l_known[]" value="English">
+                                <label for="english">English</label>
+                                <span id="s42"></span>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="r3" name="r3" value="Yes">
+                                <label for="r3">Read</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="w3" name="w3" value="Yes">
+                                <label for="w3">Write</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="ss3" name="ss3" value="Yes">
+                                <label for="ss3">Speak</label>  
+                            </td>
+                        </tr>
+                    </table>
+                    <br><br>
+            <table>
+                <caption>Technologies Known</caption>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="t1" name="technology[]" value="mysql">
+                            <label for="t1">MySql</label>
+                            <span id="s43"></span>
+                        </td>
+                        <td>
+                            <input type="radio" id="tech1" name="techno1" value="beginer">
+                            <label for="tech1">Beginer</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="tech2" name="techno1" value="mideator">
+                            <label for="tech2">Mideator</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="tech3" name="techno1" value="expert">
+                            <label for="tech3">Expert</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="t2" name="technology[]" value="php">
+                            <label for="t2">PHP</label>
+                            <span id="s44"></span>
+                        </td>
+                        <td>
+                            <input type="radio" id="tech4" name="techno2" value="beginer">
+                            <label for="tech4">Beginer</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="tech5" name="techno2" value="mideator">
+                            <label for="tech5">Mideator</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="tech6" name="techno2" value="expert">
+                            <label for="tech6">Expert</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="t3" name="technology[]" value="laravel">
+                            <label for="t3">Laravel</label>
+                            <span id="s45"></span>
+                        </td>
+                        <td>
+                            <input type="radio" id="tech7" name="techno3" value="beginer">
+                            <label for="tech7">Beginer</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="tech8" name="techno3" value="mideator">
+                            <label for="tech8">Mideator</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="tech9" name="techno3" value="expert">
+                            <label for="tech9">Expert</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="t4" name="technology[]" value="oracle">
+                            <label for="t4">Oracle</label>
+                            <span id="s46"></span>
+                        </td>
+                        <td>
+                            <input type="radio" id="tech10" name="techno4" value="beginer">
+                            <label for="tech10">Beginer</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="tech11" name="techno4" value="mideator">
+                            <label for="tech11">Mideator</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="tech12" name="techno4" value="expert">
+                            <label for="tech12">Expert</label>
+                        </td>
+                    </tr>
+                </table>
+            <br><br><br>
+                <!-- Referance Contact -->
+            <table class="refertable">
+                <caption>Referance Contact</caption>
+                <tr>
+                    <td colspan="4" style="text-align: right;">
+                        <span id="s47"></span>
+                        <input type="button" value="+" onclick="addrefer()">
+                        <input type="button" value="-" onclick="removerefer()">
+                    </td>
+                </tr>
+                <tr class="refer">
+                    <td>
+                        <label for="rname">Name:-</label>
+                        <input type="text" id="rname1" name="rname[]" placeholder="Relation">
+                    </td>
+                    <td>
+                        <label for="rno">Contact Number:-</label>
+                        <input type="tel" id="rno1" name="rno[]" placeholder="Phone Number">
+                        <!-- <span id="s48"></span> -->
+                    </td>
+                    <td>
+                        <label for="relation">Relation:-</label>
+                        <input type="text" id="relation1" name="relation[]" placeholder="Relation">
+                        <!-- <span id="s49"></span> -->
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+                <!-- Preferances -->
+            <table>
+                <caption>Preferances</caption>
+                <tr>
+                    <td>
+                        <label for="preferdlocation">Preferd Location:-</label>
+                        <select name="location" id="location">
+                            <option value="location">Location</option>
+                            <option value="ahemdabad">Ahemdabad</option>
+                            <option value="rajkot">Rajkot</option>
+                        </select>
+                        <span id="s53"></span>
+                    </td>
+                    <td>
+                        <label for="department">Department:-</label>
+                        <select name="department" id="department">
+                            <option value="department">Department</option>
+                            <option value="development">Development</option>
+                            <option value="design">Design</option>
+                            <option value="marketing">Marketing</option>
+                        </select>
+                        <span id="s54"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="notice">Notice Period:-</label>
+                        <input type="text" id="notice" name="notice" placeholder="1 month">
+                        <span id="s55"></span>
+                    </td>
+                    <td>
+                        <label for="expactc">Expacted CTC:-</label>
+                        <input type="text" id="expactc" name="expactc" placeholder="8 LPA">
+                        <span id="s56"></span>
+                    </td>
+                    <td>
+                        <label for="currentctc">Current CTC:-</label>
+                        <input type="text" id="currentctc" name="currentctc" placeholder="4.6 LPA">
+                        <span id="s57"></span>
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+            <center>
+                    <input type="submit" value="Submit" class="btn1">
+                    <input type="reset" value="Reset" class="btn1">
+            </center>
+    </form>
+</div>
+    <script type="text/javascript" src="/jobform/jobform.js"></script>
+</body>
+</html>

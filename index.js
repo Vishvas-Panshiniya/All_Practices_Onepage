@@ -21,6 +21,7 @@ const delimiter_search = require("./routers/delimiter_search")
 const apifetch = require("./routers/apifetch");
 const ajaxdropdown = require("./routers/ajaxdropdown");
 const ajaxjobform = require("./routers/ajaxjobform");
+const jobform = require("./routers/jobform")
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
@@ -48,6 +49,7 @@ app.use("/login",delimiter_search);
 app.use("/login",apifetch);
 app.use("/login",ajaxdropdown);
 app.use("/login", ajaxjobform);
+app.use("/login", jobform);
 
 
 app.listen(process.env.port);

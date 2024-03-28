@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job-Application-From3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/jobform/jobform.css">
+</head>
+<body>
+    <h2 style="text-align: center;">Job Application Form</h2>
+<div class="container">
+    <form method="post" action="/login/dashboard/simplejobdataupdate" id="form" name="form" onsubmit="return validatefunction()">
+                <!-- Basic Details" -->
+            <input type="hidden" name="empid" value="<%= result1[0].empid %>">
+            <table>
+                <caption>Basic Details</caption>
+                <tr>
+                    <td>
+                        <label for="fname">FirstName:-</label>
+                        <input type="text" id="fname" name="fname" placeholder="FirstName" value="<%= result1[0].fname %>">
+                        <span id="s1"></span>
+                    </td>
+                    <td>
+                        <label for="lname">LastName:-</label>
+                        <input type="text" id="lname" name="lname" placeholder="LastName"
+                        value="<%= result1[0].lname %>">
+                        <span id="s2"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="designation">Designation:-</label>
+                        <input type="text" id="designation" name="designation" placeholder="Designation"
+                        value="<%= result1[0].designation %>">
+                        <span id="s3"></span>
+                    </td>
+                    <td>
+                        <label for="address1">Address 1:-</label>
+                        <input type="text" id="address1" name="address1" placeholder="Address 1"
+                        value="<%= result1[0].address1 %>">
+                        <span id="s4"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="Email" value="<%= result1[0].email %>">
+                        <span id="s5"></span>
+                    </td>
+                    <td>
+                        <label for="address2">Address 2:-</label>
+                        <input type="text" id="address2" name="address2" placeholder="Address 2" value="<%= result1[0].address2 %>">
+                        <span id="s6"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="mobileno">Phone Number:-</label>
+                        <input type="text" id="mobileno" name="mobileno" placeholder="1234567890" value="<%= result1[0].mobileno %>">
+                        <span id="s7"></span>
+                    </td>
+                    <td>
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" name="city" placeholder="City" value="<%= result1[0].city %>">
+                        <span id="s8"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="gender">Gender</label>
+                            <input type="radio" id="male" name="gender" value="male"  <% if (result1[0].gender === 'male')  { %>  checked <% } %>>
+                        <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="female"  <% if (result1[0].gender === 'female')  { %>  checked <% } %>>
+                        <label for="female">Female</label>
+                            <input type="radio" id="other" name="gender" value="other"  <% if (result1[0].gender === 'other')  { %>  checked <% } %>>
+                        <label for="other">Other</label>
+                        <span id="s9"></span>
+                    </td>
+                    <td>
+                        <label for="state">State:-</label>
+                        <select name="state" id="state">
+                            <option value="State">State</option>
+                            <option value="Gujarat" <% if (result1[0].state === 'Gujarat') { %> selected <% } %>>Gujarat</option>
+                            <option value="Goa" <% if (result1[0].state === 'Goa')  {  %> selected <% } %>>Goa</option>
+                            <option value="Bihar" <% if (result1[0].state === 'Bihar')  {  %> selected <% } %>>Bihar</option>
+                            <option value="Madhya Pradesh" <% if (result1[0].state === 'Madhya Pradesh')  {  %> selected <% } %>>Madhya Pradesh</option>
+                            <option value="Maharashtra" <% if (result1[0].state === 'Maharashtra')  {  %> selected <% } %>>Maharashtra</option>
+                            <option value="Punjab" <% if (result1[0].state === 'Punjab')  {  %> selected <% } %>>Punjab</option>
+                            <option value="Rajasthan" <% if (result1[0].state === 'Rajasthan')  { %>  selected <% }%>>Rajasthan</option>
+                        </select>
+                        <span id="s10"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="rstatus">Relationship Status:-</label>
+                        <select name="rstatus" id="rstatus">
+                            <option value="status">Status</option>
+                            <option value="Single" <% if (result1[0].rstatus === 'Single')  { %> selected <% } %>>Single</option>
+                            <option value="Married" <% if (result1[0].rstatus === 'Married')  { %> selected <% } %>>Married</option>
+                        </select>
+                        <span id="s11"></span>
+                    </td>
+                    <td>
+                        <label for="zipcode">Zip Code:-</label>
+                        <input type="text" id="zipcode" name="zipcode" value="<%= result1[0].zipcode %>">
+                        <span id="s12"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="dob">Date Of Birth:-</label>
+                        <input type="text" id="dob" name="dob" placeholder="yyyy-mm-dd" value="<%= result1[0].dob %>">
+                        <span id="s13"></span>
+                    </td>
+                </tr>  
+            </table>
+            <br><br>
+                            <!-- Education Details" -->
+        <table>
+            <caption>Education Details</caption>
+            <tr>
+                <td colspan="4" style="text-align: right;">
+                    <span id="s14"></span>
+                </td>
+            </tr>
+            <% for(let i =0; i < result2.length; i++) { %> 
+            <tr>
+                <input type="hidden" name="courseid" value="<%= result2[i].courseid %>">
+                <td>
+                    <label for="course">Course Name:-</label>
+                    <select name="course[]" id="course1">
+                        <option value="select">Select</option>
+                        <option value="ssc" <% if (result2[i].coursename === 'ssc')  { %> selected <% } %>>SSC</option>
+                        <option value="hsc" <% if (result2[i].coursename === 'hsc')  { %> selected <% } %>>HSC</option>
+                        <option value="be" <% if (result2[i].coursename === 'be')  { %> selected <% } %>>BE</option>
+                        <option value="me" <% if (result2[i].coursename === 'me')  { %> selected <% } %>>ME</option>
+                        <option value="phd" <% if (result2[i].coursename === 'phd')  { %> selected <% } %>>PHD</option>
+                    </select>
+                </td>
+                <td>
+                    <label for="year">Passing Year:-</label>
+                    <input type="text" id="year1"  class ="year1" name="year[]" placeholder="yyyy" value="<%= result2[i].passing_year %>">
+                    <!-- <span id="s15"></span> -->
+                </td>
+                <td>
+                    <label for="per">Percentage:-</label>
+                    <input type="text" id="per1"  class ="year1" name="per[]" placeholder="Percentage" value="<%= result2[i].percantage %>">
+                    <!-- <span id="s16"></span> -->
+                </td>
+            </tr>
+            <% } %>
+        </table>
+        <br><br>
+          <!--Work Experience-->
+          <table>
+            <caption>Work Experience</caption>
+            <tr>
+                <td colspan="4" style="text-align: right;">
+                    <span id="s28"></span>
+                </td>
+            </tr>
+            <% for(let j = 0; j < result3.length; j++) { %> 
+                <input type="hidden" name="workid" value="<%= result3[j].workid %>">
+                <tr>
+                    <td>
+                        <label for="company">Company Name:-</label>
+                        <input type="text" id="company1" name="company[]" placeholder="Company Name" value="<%= result3[j].company_name %>">
+                    </td>
+                    <td>
+                        <label for="c_designation">Designation:-</label>
+                        <input type="text" id="designation1" name="c_designation[]" placeholder = "Designation" value="<%= result3[j].com_designation %>">
+                        <!-- <span id="s29"></span> -->
+                    </td>
+                    <td>
+                        <label for="startdate">From:-</label>
+                        <input type="text" id="startdate1" name="startdate[]" placeholder="yyyy-mm-dd" value="<%= result3[j].start_date %>">
+                        <!-- <span id="s30"></span> -->
+                    </td>
+                    <td>
+                        <label for="enddate">To:-</label>
+                        <input type="text" id="enddate1" name="enddate[]" placeholder="yyyy-mm-dd" value="<%= result3[j].end_date %>">
+                        <!-- <span id="s31"></span> -->
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+        <br><br>
+         <!--Language Known-->
+         <table>
+            <caption>Language Known</caption>
+            <tr>
+                <td>
+                    <input type="checkbox" id="gujarati" name="l_known[]" value="Gujarati" <% result4.forEach(element => { %>
+                        <% if(element.l_name === 'Gujarati') { %> checked <% } %>
+                    <% }); %>>
+                    <label for="gujarati">Gujarati</label>
+                    <span id="s40"></span>
+                </td>
+                <td>
+                    <input type="checkbox" id="r1" name="r1" value="Yes" <% result4.forEach(element => { %>
+                        <% if (element.l_name === 'Gujarati' && element.l_read === 'Yes')  { %>  checked <% } %>
+                    <% }) %>>
+                    <label for="r1">Read</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="w1" name="w1" value="Yes" <% result4.forEach(element => { %>
+                        <% if (element.l_name === 'Gujarati' && element.l_write === 'Yes')  { %>  checked <% } %>
+                    <% }) %>>
+                    <label for="w1">Write</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="ss1" name="ss1" value="Yes" <% result4.forEach(element => { %>
+                        <% if (element.l_name === 'Gujarati' && element.l_speak === 'Yes')  { %>  checked <% } %>
+                    <% }) %>>
+                    <label for="ss1">Speak</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="hindi" name="l_known[]" value="Hindi" <% result4.forEach(element => { %>
+                        <% if(element.l_name === 'Hindi') { %> checked <% } %>
+                    <% }) %>>
+                    <label for="hindi">Hindi</label>
+                    <span id="s41"></span>
+                </td>
+                <td>
+                    <input type="checkbox" id="r2" name="r2" value="Yes" <% result4.forEach(element => { %>
+                        <% if (element.l_name === 'Hindi' && element.l_read === 'Yes')  { %>  checked <% } %>
+                    <% }) %>>
+                    <label for="r2">Read</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="w2" name="w2" value="Yes" <% result4.forEach(element => { %>
+                        <% if (element.l_name === 'Hindi' && element.l_write === 'Yes')  { %>  checked <% } %>
+                    <% }) %> >
+                    <label for="w2">Write</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="ss2" name="ss2" value="Yes" <% result4.forEach(element => { %>
+                        <% if (element.l_name === 'Hindi' && element.l_speak === 'Yes')  { %>  checked <% } %>
+                    <% }) %>>
+                    <label for="ss2">Speak</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" id="english" name="l_known[]" value="English" <% result4.forEach(element => { %>
+                        <% if(element.l_name === 'English') { %> checked <% } %>
+                    <% }) %>>
+                    <label for="english">English</label>
+                    <span id="s42"></span>
+                </td>
+                <td>
+                    <input type="checkbox" id="r3" name="r3" value="Yes" <% result4.forEach(element => { %>
+                        <% if (element.l_name === 'English' && element.l_read === 'Yes')  { %>  checked <% } %>
+                    <% }) %>>
+                    <label for="r3">Read</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="w3" name="w3" value="Yes" <% result4.forEach(element => { %>
+                        <% if (element.l_name === 'English' && element.l_write === 'Yes')  { %>  checked <% } %>
+                    <% }) %>>
+                    <label for="w3">Write</label>
+                </td>
+                <td>
+                    <input type="checkbox" id="ss3" name="ss3" value="Yes" <% result4.forEach(element => { %>
+                        <% if (element.l_name === 'English' && element.l_speak === 'Yes')  { %>  checked <% } %>
+                    <% }) %>>
+                    <label for="ss3">Speak</label>  
+                </td>
+            </tr>
+        </table>
+        <br><br>
+    <!-- Technologies Known -->
+        <table>
+            <caption>Technologies Known</caption>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="t1" name="technology[]" value="mysql" <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'mysql') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="t1">MySql</label>
+                        <span id="s43"></span>
+                    </td>
+                    <td>
+                        <input type="radio" id="tech1" name="techno1" value="beginer" <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'mysql' && element.tech_level === 'beginer') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="tech1">Beginer</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="tech2" name="techno1" value="mideator" <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'mysql' && element.tech_level === 'mideator') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="tech2">Mideator</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="tech3" name="techno1" value="expert" <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'mysql' && element.tech_level === 'expert') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="tech3">Expert</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="t2" name="technology[]" value="php" <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'php') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="t2">PHP</label>
+                        <span id="s44"></span>
+                    </td>
+                    <td>
+                        <input type="radio" id="tech4" name="techno2" value="beginer" <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'php' && element.tech_level === 'beginer') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="tech4">Beginer</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="tech5" name="techno2" value="mideator" <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'php' && element.tech_level === 'mideator') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="tech5">Mideator</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="tech6" name="techno2" value="expert" <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'php' && element.tech_level === 'expert') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="tech6">Expert</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="t3" name="technology[]" value="laravel"  <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'laravel') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="t3">Laravel</label>
+                        <span id="s45"></span>
+                    </td>
+                    <td>
+                        <input type="radio" id="tech7" name="techno3" value="beginer" <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'laravel' && element.tech_level === 'beginer') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="tech7">Beginer</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="tech8" name="techno3" value="mideator" <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'laravel' && element.tech_level === 'mideator') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="tech8">Mideator</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="tech9" name="techno3" value="expert" <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'laravel' && element.tech_level === 'expert') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="tech9">Expert</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="t4" name="technology[]" value="oracle"  <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'oracle') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="t4">Oracle</label>
+                        <span id="s46"></span>
+                    </td>
+                    <td>
+                        <input type="radio" id="tech10" name="techno4" value="beginer" <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'oracle' && element.tech_level === 'beginer') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="tech10">Beginer</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="tech11" name="techno4" value="mideator" <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'oracle' && element.tech_level === 'mideator') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="tech11">Mideator</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="tech12" name="techno4" value="expert"  <% result5.forEach(element => { %>
+                            <% if(element.tech_name === 'oracle' && element.tech_level === 'expert') { %> checked <% } %>
+                        <% }) %>>
+                        <label for="tech12">Expert</label>
+                    </td>
+                </tr>
+            </table>
+        <br><br><br>
+            <!-- Referance Contact -->
+        <table>
+            <caption>Referance Contact</caption>
+            <tr>
+                <td colspan="4" style="text-align: right;">
+                    <span id="s47"></span>
+                </td>
+            </tr>
+            <% for(let y = 0; y < result6.length; y++) { %> 
+            <tr>
+                <input type="hidden" name="rid" value="<%= result6[y].rid %>">
+                <td>
+                    <label for="rname">Name:-</label>
+                    <input type="text" id="rname1" name="rname[]" placeholder="Relation" value="<%= result6[y].r_name %>">
+                </td>
+                <td>
+                    <label for="rno">Contact Number:-</label>
+                    <input type="tel" id="rno1" name="rno[]" placeholder="Phone Number"value="<%= result6[y].r_no %>">
+                    <!-- <span id="s48"></span> -->
+                </td>
+                <td>
+                    <label for="relation">Relation:-</label>
+                    <input type="text" id="relation1" name="relation[]" placeholder="Relation"value="<%= result6[y].r_relation %>">
+                    <!-- <span id="s49"></span> -->
+                </td>
+            </tr>
+            <% } %>
+        </table>
+        <br><br>
+            <!-- Preferances -->
+        <table>
+            <caption>Preferances</caption>
+            <% for(let z = 0; z < result7.length; z++) { %> 
+            <tr>
+                <td>
+                    <label for="preferdlocation">Preferd Location:-</label>
+                    <select name="location" id="location">
+                        <option value="location">Location</option>
+                        <option value="ahemdabad" <% if (result7[z].location === 'ahemdabad')  { %> selected <% } %>>Ahemdabad</option>
+                        <option value="rajkot" <% if (result7[z].location === 'rajkot')  { %> selected <% } %>>Rajkot</option>
+                    </select>
+                    <span id="s53"></span>
+                </td>
+                <td>
+                    <label for="department">Department:-</label>
+                    <select name="department" id="department">
+                        <option value="department">Department</option>
+                        <option value="development" <% if (result7[z].department === 'development')  { %> selected <% } %>>Development</option>
+                        <option value="design" <% if (result7[z].department === 'design')  { %> selected <% } %>>Design</option>
+                        <option value="marketing" <% if (result7[z].department === 'marketing')  { %> selected <% } %>>Marketing</option>
+                    </select>
+                    <span id="s54"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="notice">Notice Period:-</label>
+                    <input type="text" id="notice" name="notice" placeholder="1 month" value="<%= result7[z].notice %>">
+                    <span id="s55"></span>
+                </td>
+                <td>
+                    <label for="expactc">Expacted CTC:-</label>
+                    <input type="text" id="expactc" name="expactc" placeholder="8 LPA" value="<%= result7[z].expacted_ctc %>">
+                    <span id="s56"></span>
+                </td>
+                <td>
+                    <label for="currentctc">Current CTC:-</label>
+                    <input type="text" id="currentctc" name="currentctc" placeholder="4.6 LPA" value="<%= result7[z].current_ctc %>">
+                    <span id="s57"></span>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+        <br><br>
+        <center>
+                <input type="submit" value="Update" class="btn1">
+        </center>
+</form>
+</div>
+<script type="text/javascript" src="/jobform/jobform.js"></script>
+</body>
+</html>
