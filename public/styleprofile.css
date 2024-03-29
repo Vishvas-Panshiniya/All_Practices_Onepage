@@ -28,7 +28,8 @@ table{
     text-align: center;
     margin: 20px auto;
     background-color: cadetblue;
-    width: 600px;
+    width: 550px;
+    height: 800px;
 }
 
 /* home page btn */
@@ -39,7 +40,7 @@ table{
     border-radius: 10px;
     width: 200px;
     /* margin-top: 40px; */
-    margin-left: 80%;
+    margin-left: 40%;
     text-align: center;
 }
 
@@ -57,4 +58,10 @@ a{
     width: 150px;
     background-color: lightblue;
     padding: 5px 0px;
+}
+
+.tasklist{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
