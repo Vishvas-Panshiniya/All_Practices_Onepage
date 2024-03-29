@@ -89,7 +89,7 @@ exports.userprofile = async (req,res) => {
             let id = result2[0].id;
             let pass_word = md5(`${password}${result2[0].salt}`);
             const token = jwt.sign({ id },process.env.KEY,{ expiresIn: '1h' });
-            res.cookie('token',token, { expires: new Date(Date.now() + 900000), httpOnly: true });
+            res.cookie('token',token, { expires: new Date(Date.now() + 3600000), httpOnly: true });
 
             if(result2[0].pass_word === pass_word){
                 res.json({status : 200 ,message: "Login complete",token: token, message2:"Click here to <b>:-</b><a href='http://localhost:7095/dashboard' class = 'signbtn'>Go to Dashboard </a>"})

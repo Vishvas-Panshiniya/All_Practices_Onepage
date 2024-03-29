@@ -6,11 +6,6 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 const login = require("./routers/login");
-// const dynamictable = require("./routers/dynamictable");
-// const kukucube  = require("./routers/kukucube");
-// const tictactoe = require("./routers/tic-tac-toe");
-// const sorting = require("./routers/sorting");
-// const events = require("./routers/events");
 const javascripttask = require("./routers/javascripttask")
 const student_datalist = require("./routers/student_datalist");
 const attendence = require("./routers/students_atten")
@@ -36,11 +31,6 @@ app.use(express.static(path.join(__dirname,"public")));
 // all route use
 // login and registeration form
 app.use("/", login);
-// app.use("/login", dynamictable)
-// app.use("/login" , kukucube)
-// app.use("/login" , tictactoe)
-// app.use("/login" , sorting)
-// app.use("/login" , events)
 app.use("/login", javascripttask);
 app.use("/login" , student_datalist)
 app.use("/login" , attendence)
