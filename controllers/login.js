@@ -8,7 +8,7 @@ const moment = require("moment");
 
 exports.homepage = (req,res) =>{
     try {
-        res.render("login_page/index")
+        res.render("login_page/webhomepage")
 
     } catch (err) {
         console.log(err);
