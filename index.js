@@ -31,7 +31,14 @@ app.use(express.static(path.join(__dirname,"public")));
 // all route use
 // login and registeration form
 app.use("/", login);
+
+// html task 
+app.use("/login",htmltask);
+
+// javascript task
 app.use("/login", javascripttask);
+
+// nodejs task
 app.use("/login" , student_datalist)
 app.use("/login" , attendence)
 app.use("/login", student_result);
@@ -39,11 +46,12 @@ app.use("/login", dynamicquery);
 app.use(columnorderby);
 app.use("/login", searching);
 app.use("/login",delimiter_search);
+app.use("/login", jobform);
+
+// ajax task
 app.use("/login",apifetch);
 app.use("/login",ajaxdropdown);
 app.use("/login", ajaxjobform);
-app.use("/login", jobform);
-app.use("/login",htmltask);
 
 
 app.listen(process.env.port);
