@@ -65,6 +65,11 @@ const passvalidation = async () =>{
         document.getElementById("a1").innerText = "does not match re-enter password!"
         isvalid = false;
     }
+    else{
+        document.getElementById("a1").innerText = ""
+        isvalid = true;
+    }
+    if(isvalid === true){
     let formdata = document.getElementById("form");
     let details = new FormData(formdata);
     const params = new URLSearchParams(details);
@@ -81,17 +86,25 @@ const passvalidation = async () =>{
         if(result.status === 200){
             document.getElementById("s11").innerHTML = `<p>${result.msg}</p><strong><a href="/signin">Login Page</a></strong>`
         }
+    }
         return isvalid;
 }
     
     // login Page submit fetch data then after login
     async function logindata() {
+        let isvalid = true
         if(!email.test(document.getElementById("email").value) || document.getElementById("email").value == ""){
             document.getElementById("s5").innerText = "email is not valid !"
+            isvalid = false;
         }
         if(document.getElementById("password").value == ""){
             document.getElementById("s5").innerText = "password is Required!"
+            isvalid = false;
+        }else{
+            document.getElementById("s5").innerText = "password is Required!"
+            isvalid = true;
         }
+        if(isvalid === true){
         let formdata = document.getElementById("form");
         let details = new FormData(formdata);
         const params = new URLSearchParams(details);
@@ -113,14 +126,17 @@ const passvalidation = async () =>{
             document.getElementById("s5").innerText = result.message;
             document.getElementById("s6").innerHTML = result.message2;
         }
+    }
 }
 
 // forget password check email and fetch data
 async function forget(){
+    let isvalid = true;
     if(!email.test(document.getElementById("email").value) || document.getElementById("email").value == ""){
         document.getElementById("s7").innerText = "email is not valid !"
-        // isvalid = false;
+        isvalid = false;
     }
+    if(isvalid === true){
         let formdata = document.getElementById("form");
         let details = new FormData(formdata);
         const params = new URLSearchParams(details);
@@ -140,4 +156,34 @@ async function forget(){
         if(result.status === 200){
             document.getElementById("s8").innerHTML = `Click Here:- <a href='/password?id=${result.id}&key=${result.key}'>http://localhost:7095/resetpassword?id=${result.id}&key=${result.key}</a>`;
         }
+    }
 }
+
+const passwordField = document.getElementById("password");
+const rpasswordField = document.getElementById("rpassword");
+const togglePassword = document.querySelector(".password-toggle-icon i");
+const rtogglePassword = document.querySelector(".rpassword-toggle-icon i");
+
+togglePassword.addEventListener("click", function () {
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+    togglePassword.classList.remove("fa-eye");
+    togglePassword.classList.add("fa-eye-slash");
+  } else {
+    passwordField.type = "password";
+    togglePassword.classList.remove("fa-eye-slash");
+    togglePassword.classList.add("fa-eye");
+  }
+});
+
+rtogglePassword.addEventListener("click", function () {
+    if (rpasswordField.type === "password") {
+      rpasswordField.type = "text";
+      rtogglePassword.classList.remove("fa-eye");
+      rtogglePassword.classList.add("fa-eye-slash");
+    } else {
+      rpasswordField.type = "password";
+      rtogglePassword.classList.remove("fa-eye-slash");
+      rtogglePassword.classList.add("fa-eye");
+    }
+  });

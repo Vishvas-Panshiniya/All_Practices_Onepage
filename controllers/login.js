@@ -4,7 +4,7 @@ const insertdata = require("../middleware/queryrun");
 const md5 = require("md5");
 const jwt = require("jsonwebtoken");
 const moment = require("moment");
-
+const randomGenerate = require("../middleware/randomfunction");
 
 exports.homepage = (req,res) =>{
     try {
@@ -93,7 +93,7 @@ exports.userprofile = async (req,res) => {
             res.cookie('token',{token,name}, { expires: new Date(Date.now() + 3600000), httpOnly: true });
 
             if(result2[0].pass_word === pass_word){
-                res.json({status : 200 ,message: "Login complete",token: token, message2:"Click here to <b>:-</b><a href='http://localhost:7095/dashboard' class = 'signbtn'>Go to Dashboard </a>"})
+                res.json({status : 200 ,message: "Login complete",token: token, message2:"Click here to <b>:-</b><a href='http://localhost:7095/login/dashboard' class = 'signbtn'>Go to Dashboard </a>"})
             }else{
                 res.json({status : 400 , message: "username or password invalid!"})
             }
@@ -141,3 +141,4 @@ exports.setforgetpassword = async (req,res) => {
         console.log(err);
       }
 }
+

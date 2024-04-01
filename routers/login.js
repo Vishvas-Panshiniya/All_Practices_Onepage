@@ -10,7 +10,7 @@ router.route("/register").post(registeration);
 router.route("/password").get(password);
 router.route("/activation").post(activation);
 router.route("/profile").post(userprofile);
-router.route("/dashboard").get(authtoken,dashboard);
+router.route("/login/dashboard").get(authtoken,dashboard);
 router.route("/forgetpassword").get(forgetpassword);
 router.route("/forgetpassword").post(setforgetpassword);
 
