@@ -12,10 +12,7 @@ exports.mainpage = async (req, res) => {
 
 exports.component = async (req, res) => {
     try {
-        let l = req.query.p;
-        if (isNaN(l)) {
-            l = 1;
-        }
+        let l = req.query.p || 1;
         let offset = (Number(l) - 1) * 200;
         let result = await insertdata(`select *, DATE_FORMAT(dob, "%Y/%m/%d") as dob,DATE_FORMAT(created_at, "%Y/%m/%d %T") as created_at  from student_master1 limit 200 offset ${offset}`);
         res.render("student_datalist/pagination", { l, alldata2: result })
