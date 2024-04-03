@@ -118,7 +118,7 @@ exports.jobupdate = async (req, res) => {
         let result1 = await insertdata(`select * , DATE_FORMAT(dob, "%Y-%m-%d") as dob from basic_details where empid = ${id};`)
         let result2 = await insertdata(`select * from education_details where empid = ${id};`)
         let result3 = await insertdata(`select * , DATE_FORMAT(start_date, "%Y-%m-%d") as start_date, DATE_FORMAT(end_date, "%Y-%m-%d") as end_date from work_expreience where empid = ${id};`)
-        let result4 = await insertdata(`select * from language_known where empid = ${id};`)
+        let result4 = await insertdata(`select * from language_known where empid = ${id};`) 
         let result5 = await insertdata(`select * from technologies_details where empid = ${id};`)
         let result6 = await insertdata(`select * from referance_contact where empid = ${id};`)
         // console.log(result6);

@@ -8,7 +8,7 @@ exports.searching = async (req,res) => {
     let limit = 10;
     let offset = (Number(l) - 1) * limit;
     let result = `select *, DATE_FORMAT(dob, "%Y/%m/%d") as dob from student_master`
-    if(id){
+    if(id && !isNaN(id)){
         result = `select *, DATE_FORMAT(dob, "%Y/%m/%d") as dob from student_master where studentid in (${id})`
     }else{
         let array = [];

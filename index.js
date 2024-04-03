@@ -43,7 +43,7 @@ app.use("/login" , student_datalist)
 app.use("/login" , attendence)
 app.use("/login", student_result);
 app.use("/login", dynamic_query);
-app.use(column_orderby);
+app.use("/login",column_orderby);
 app.use("/login", searching);
 app.use("/login",delimiter_search);
 app.use("/login", job_form);
