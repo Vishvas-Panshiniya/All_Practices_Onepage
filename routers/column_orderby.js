@@ -1,8 +1,8 @@
 const express = require("express");
 const { authtoken } = require("../middleware/authentication");
-const { indexpage } = require("../controllers/dynamicquery");
+const { columnorderby } = require("../controllers/column_orderby");
 const router = express.Router();
 
-router.route("/dashboard/sqlquery").get(authtoken,indexpage);
+router.route("/dashboard/columnorderby").get(authtoken,columnorderby);
 
 module.exports = router;

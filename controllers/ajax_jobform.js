@@ -1,11 +1,11 @@
 const mysql = require("../config/db_connection");
-const insertdata = require("../middleware/queryrun");
+const insertdata = require("../middleware/query_run");
 const bodyparser = require("body-parser");
 
 exports.jobindex = (req, res) => {
     try {
         let result1 = [{}], result2 = [{}], result3 = [{}], result4 = [{}], result5 = [{}], result6 = [{}], result7 = [{}];
-        res.render("ajax_jobform/ajaxjobform_index", { result1, result2, result3, result4, result5, result6, result7 });
+        res.render("ajax_jobform/ajax_jobform_index", { result1, result2, result3, result4, result5, result6, result7 });
     } catch (err) {
         console.log(err);
     }
@@ -105,7 +105,7 @@ exports.jobsubmit = async (req, res) => {
 exports.joblistdata = async (req, res) => {
     try {
         let result1 = await insertdata(`select * , DATE_FORMAT(dob, "%Y-%m-%d") as dob from basic_details;`)
-        res.render("ajax_jobform/ajaxjobform_listdata", { result1 });
+        res.render("ajax_jobform/ajax_jobform_listdata", { result1 });
     } catch (err) {
         console.log(err);
     }
@@ -123,7 +123,7 @@ exports.jobupdate = async (req, res) => {
         let result6 = await insertdata(`select * from referance_contact where empid = ${id};`)
         // console.log(result6);
         let result7 = await insertdata(`select * from preferances_details where empid = ${id};`)
-        res.render("ajax_jobform/ajaxjobform_index", { result1, result2, result3, result4, result5, result6, result7, id });
+        res.render("ajax_jobform/ajax_jobform_index", { result1, result2, result3, result4, result5, result6, result7, id });
     } catch (err) {
         console.log(err);
     }

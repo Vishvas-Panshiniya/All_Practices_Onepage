@@ -2,7 +2,7 @@ const path = require("path");
 
 exports.dynamictable = (req,res) => {
     try {
-        res.sendFile(path.join(__dirname,"../views","dynamictable","daynamictable.html"))
+        res.sendFile(path.join(__dirname,"../views","dynamic_table","daynamic_table.html"))
     } catch (err) {
         console.log(err);
     }
@@ -18,7 +18,7 @@ exports.kukucube = (req,res) => {
 
 exports.tictactoe = (req,res) => {
     try {
-        res.sendFile(path.join(__dirname,"../views","tic-tac-toe","tic-tac-toe.html"))
+        res.sendFile(path.join(__dirname,"../views","tic_tac_toe","tic_tac_toe.html"))
     } catch (err) {
         console.log(err);
     }

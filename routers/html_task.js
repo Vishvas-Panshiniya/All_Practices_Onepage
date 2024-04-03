@@ -1,6 +1,6 @@
 const express = require("express");
 const { authtoken } = require("../middleware/authentication");
-const { htmltask1, htmltask2, htmltask3 } = require("../controllers/htmltask");
+const { htmltask1, htmltask2, htmltask3 } = require("../controllers/html_task");
 const router = express.Router();
 
 router.route("/dashboard/htmltask1").get(authtoken,htmltask1);

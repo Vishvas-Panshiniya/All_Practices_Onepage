@@ -1,5 +1,5 @@
 const mysql = require("../config/db_connection");
-const insertdata = require("../middleware/queryrun");
+const insertdata = require("../middleware/query_run");
 const bodyparser = require("body-parser");
 
 exports.columnorderby = async (req,res) => {

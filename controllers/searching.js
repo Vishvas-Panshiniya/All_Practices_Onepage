@@ -1,5 +1,5 @@
 const mysql = require("../config/db_connection");
-const insertdata = require("../middleware/queryrun");
+const insertdata = require("../middleware/query_run");
 
 exports.searching = async (req,res) => {
     try {

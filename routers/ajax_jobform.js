@@ -1,6 +1,6 @@
 const express = require("express");
 const { authtoken } = require("../middleware/authentication");
-const { jobindex, jobsubmit, joblistdata, jobupdate, updatejobdata } = require("../controllers/ajaxjobform");
+const { jobindex, jobsubmit, joblistdata, jobupdate, updatejobdata } = require("../controllers/ajax_jobform");
 const router = express.Router();
 
 router.route("/dashboard/ajaxjobform").get(authtoken,jobindex);

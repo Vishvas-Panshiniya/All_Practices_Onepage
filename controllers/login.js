@@ -1,10 +1,10 @@
 const mysql = require("../config/db_connection");
 var path = require("path");
-const insertdata = require("../middleware/queryrun");
+const insertdata = require("../middleware/query_run");
 const md5 = require("md5");
 const jwt = require("jsonwebtoken");
 const moment = require("moment");
-const randomGenerate = require("../middleware/randomfunction");
+const randomGenerate = require("../middleware/random_function");
 
 exports.homepage = (req,res) =>{
     try {

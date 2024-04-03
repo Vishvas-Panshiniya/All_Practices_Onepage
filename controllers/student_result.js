@@ -1,5 +1,5 @@
 const mysql = require("../config/db_connection");
-const insertdata = require("../middleware/queryrun");
+const insertdata = require("../middleware/query_run");
 const bodyparser = require("body-parser");
 
 
@@ -8,7 +8,7 @@ exports.indexpage = async (req,res) => {
         let l = req.query.p || 1;
         let offset = (Number(l)-1)*30;
         let result = await insertdata(`SELECT student_master.studentid, student_master.firstname,student_master.lastname,sum(exam_record.obtained_theroymark) as totaltheroymark,sum(exam_record.obtained_pramark) as totalpramark FROM student_master LEFT JOIN exam_record ON student_master.studentid = exam_record.studentid group by studentid , examid limit 30 offset ${offset}`);
-        res.render("student_result/resultlist", {l, result})
+        res.render("student_result/result_list", {l, result})
     } catch (err) {
         console.log(err);
     }

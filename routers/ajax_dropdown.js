@@ -1,6 +1,6 @@
 const express = require("express");
 const { authtoken } = require("../middleware/authentication");
-const { states, citys, ajaxindex } = require("../controllers/ajaxdropdown");
+const { states, citys, ajaxindex } = require("../controllers/ajax_dropdown");
 const router = express.Router();
 
 router.route("/dashboard/ajaxdropdown").get(authtoken,ajaxindex);

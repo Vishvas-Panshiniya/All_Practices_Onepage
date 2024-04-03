@@ -1,6 +1,6 @@
 const express = require("express");
 const { authtoken } = require("../middleware/authentication");
-const { dynamictable, kukucube, tictactoe, sorting, events } = require("../controllers/javascripttask");
+const { dynamictable, kukucube, tictactoe, sorting, events } = require("../controllers/javascript_task");
 const router = express.Router();
 
 router.route("/dashboard/dynamictable").get(authtoken,dynamictable);

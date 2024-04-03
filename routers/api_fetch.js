@@ -1,6 +1,6 @@
 const express = require("express");
 const { authtoken } = require("../middleware/authentication");
-const { posts, postsid } = require("../controllers/apifetch");
+const { posts, postsid } = require("../controllers/api_fetch");
 const router = express.Router();
 
 router.route("/dashboard/apifetch").get(authtoken,posts);
