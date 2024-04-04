@@ -32,7 +32,7 @@
         
         <% if(result2.length > 0) { %>
         <% for(let i=0; i < result2.length; i++) { %>
-            <input type="hidden" name="courseid" value="<%= result2[i].courseid %>">
+            <input type="hidden" name="courseid[]" value="<%= result2[i].courseid %>">
             <tr  class="edu">
                 <td>
                     <label for="course">Course Name:-</label>

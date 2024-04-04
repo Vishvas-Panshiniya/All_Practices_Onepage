@@ -7,6 +7,7 @@ exports.ajaxindex = (req,res) => {
         res.render("ajax_dropdown/ajax_dropdown");
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -17,6 +18,7 @@ exports.states = async (req,res) => {
         res.send(states);
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -27,5 +29,6 @@ exports.citys = async (req,res) => {
         res.send(cities);
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }

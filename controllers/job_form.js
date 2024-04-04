@@ -7,6 +7,7 @@ exports.jobindex = (req, res) => {
         res.render("jobform/jobform_index");
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -100,6 +101,7 @@ exports.jobsubmit = async (req, res) => {
         res.render("jobform/jobform_save");
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -109,6 +111,7 @@ exports.joblistdata = async (req, res) => {
         res.render("jobform/jobform_listdata", { result1 });
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -126,6 +129,7 @@ exports.jobupdate = async (req, res) => {
         res.render("jobform/jobform_update", { result1, result2, result3, result4, result5, result6, result7, id });
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -254,5 +258,6 @@ exports.updatejobdata = async (req, res) => {
         res.render("jobform/jobform_updatedata");
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }

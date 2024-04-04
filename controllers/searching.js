@@ -31,5 +31,6 @@ exports.searching = async (req,res) => {
         res.render("searching/searching_index", { l, alldata2, page, id , fname, lname, email, city, opretor});
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }

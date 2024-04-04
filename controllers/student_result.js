@@ -11,6 +11,7 @@ exports.indexpage = async (req,res) => {
         res.render("student_result/result_list", {l, result})
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -24,5 +25,6 @@ exports.studentresult = async (req,res) => {
 
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }

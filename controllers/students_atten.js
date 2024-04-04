@@ -12,5 +12,6 @@ exports.indexpage = async (req, res) => {
         res.render("attendence_report/student_atten", {l, result, month, year})
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }

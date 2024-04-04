@@ -5,6 +5,7 @@ exports.dynamictable = (req,res) => {
         res.sendFile(path.join(__dirname,"../views","dynamic_table","daynamic_table.html"))
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -13,6 +14,7 @@ exports.kukucube = (req,res) => {
         res.sendFile(path.join(__dirname,"../views","kukucube","kukucube.html"))
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -21,6 +23,7 @@ exports.tictactoe = (req,res) => {
         res.sendFile(path.join(__dirname,"../views","tic_tac_toe","tic_tac_toe.html"))
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -29,6 +32,7 @@ exports.sorting = (req,res) => {
         res.sendFile(path.join(__dirname,"../views","sorting","sorting.html"))
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -37,5 +41,6 @@ exports.events = (req,res) => {
         res.sendFile(path.join(__dirname,"../views","js_events","js_events.html"))
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }

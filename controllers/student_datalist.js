@@ -7,6 +7,7 @@ exports.mainpage = async (req, res) => {
         res.render("student_datalist/datalist", { alldata2 })
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -18,6 +19,7 @@ exports.component = async (req, res) => {
         res.render("student_datalist/pagination", { l, alldata2: result })
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -31,5 +33,6 @@ exports.orderby = async (req, res) => {
         res.render("student_datalist/orderby", {l, alldata2 : result,sort,column})
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }

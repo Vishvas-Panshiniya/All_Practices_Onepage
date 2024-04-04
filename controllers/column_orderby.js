@@ -15,5 +15,6 @@ exports.columnorderby = async (req,res) => {
         res.render("column_wise_orderby/student_orderby", {l, alldata2,sort,column})
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }

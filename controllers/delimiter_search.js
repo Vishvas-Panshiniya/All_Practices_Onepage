@@ -101,6 +101,7 @@ exports.delimiter = async (req, res) => {
         res.render("delimiter_search/delimiter_index", { alldata2, show });
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 

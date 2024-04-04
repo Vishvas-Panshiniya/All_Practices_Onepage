@@ -12,6 +12,7 @@ exports.homepage = (req,res) =>{
 
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -21,6 +22,7 @@ exports.signin = (req,res) => {
         res.render("login_page/signin");
       } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
       }
 }
 
@@ -29,6 +31,7 @@ exports.signup = (req,res) => {
         res.render("login_page/signup",{result: {} ,msg: ""});
     } catch (err) {
       console.log(err);
+      res.render("allerror_page", {err});
     }
 }
 
@@ -50,6 +53,7 @@ exports.registeration = async (req,res) =>{
         }
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -65,6 +69,7 @@ exports.password = async (req,res) => {
         res.render("login_page/password" , {result,hours});
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -76,6 +81,7 @@ exports.activation = async (req,res) => {
             res.json({status: 200 , msg: "Password Set Successfully Go to :-"});
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -100,6 +106,7 @@ exports.userprofile = async (req,res) => {
         }
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -110,6 +117,7 @@ exports.dashboard = (req,res) => {
         }
       } catch (err) {
           console.log(err);
+          res.render("allerror_page", {err});
       }
 }
 
@@ -118,6 +126,7 @@ exports.forgetpassword = async (req,res) => {
         res.render("login_page/emailvalid");
       } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
       }
 }
 
@@ -139,6 +148,7 @@ exports.setforgetpassword = async (req,res) => {
         }
       } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
       }
 }
 

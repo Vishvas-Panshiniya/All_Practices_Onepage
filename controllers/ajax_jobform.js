@@ -8,15 +8,14 @@ exports.jobindex = (req, res) => {
         res.render("ajax_jobform/ajax_jobform_index", { result1, result2, result3, result4, result5, result6, result7 });
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
 exports.jobsubmit = async (req, res) => {
     try {
         const data = req.body;
-        // console.log(data);
         res.json({ success: true, message: 'Data received successfully.' });
-        // let{} = req.body;
 
         // basic_details
         let { fname, lname, designation, address1, email, address2, mobileno, city, gender, state, rstatus, zipcode, dob } = req.body;
@@ -99,6 +98,7 @@ exports.jobsubmit = async (req, res) => {
         await insertdata(`insert into preferances_details (empid,location,department,notice,expacted_ctc,current_ctc) values (${id},'${location}','${department}','${notice}','${expactc}','${currentctc}');`);
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -108,6 +108,7 @@ exports.joblistdata = async (req, res) => {
         res.render("ajax_jobform/ajax_jobform_listdata", { result1 });
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
@@ -121,19 +122,18 @@ exports.jobupdate = async (req, res) => {
         let result4 = await insertdata(`select * from language_known where empid = ${id};`) 
         let result5 = await insertdata(`select * from technologies_details where empid = ${id};`)
         let result6 = await insertdata(`select * from referance_contact where empid = ${id};`)
-        // console.log(result6);
         let result7 = await insertdata(`select * from preferances_details where empid = ${id};`)
         res.render("ajax_jobform/ajax_jobform_index", { result1, result2, result3, result4, result5, result6, result7, id });
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
 
 exports.updatejobdata = async (req, res) => {
     try {
         let id = req.body.empid;
-        // console.log(id);
-        // console.log(req.body);
+        res.json({ success: true, message: 'Data update successfully.' });
         // basic_details
         let { fname, lname, designation, address1, email, address2, mobileno, city, gender, state, rstatus, zipcode, dob } = req.body;
         await insertdata(`update basic_details set fname = '${fname}',lname = '${lname}',designation = '${designation}',address1 = '${address1}',address2 = '${address2}',email = '${email}', mobileno = '${mobileno}', city = '${city}', state = '${state}', zipcode = '${zipcode}', gender = '${gender}', rstatus = '${rstatus}', dob = '${dob}' where empid = ${id};`)
@@ -253,5 +253,6 @@ exports.updatejobdata = async (req, res) => {
         }
     } catch (err) {
         console.log(err);
+        res.render("allerror_page", {err});
     }
 }
